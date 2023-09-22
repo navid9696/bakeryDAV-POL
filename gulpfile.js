@@ -11,6 +11,8 @@ const clean = require('gulp-clean')
 const kit = require('gulp-kit')
 const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
+const plumber = require('gulp-plumber')
+
 
 const paths = {
 	html: './html/**/*.kit',
@@ -25,11 +27,14 @@ const paths = {
 
 function sassCompiler(done) {
 	src(paths.sass)
-		.pipe(sass({
-			includePaths:['node_modules']
-		}))
+		.pipe(plumber())
+		.pipe(
+			sass({
+				includePaths: ['node_modules'],
+			})
+		)
 		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
+		// .pipe(sass({errLogToConsole: true}))
 		.pipe(autoprefixer())
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
@@ -86,4 +91,8 @@ function cleanStuff(done) {
 }
 
 exports.cleanStuff = cleanStuff
-exports.default = series(parallel(handleKits,sassCompiler, javaScript, convertImages), startBrowsersync, watchForChanges)
+exports.default = series(
+	parallel(handleKits, sassCompiler, javaScript, convertImages),
+	startBrowsersync,
+	watchForChanges
+)
