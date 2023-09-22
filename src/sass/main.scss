@@ -16,6 +16,10 @@ html {
 body {
 	font-size: 1.6rem;
 	color: #fff;
-	background-color: grey;
-	-webkit-font-smoothing: antialiased;
+	background-color: rgb(164, 157, 148);
+	height: 20000px;
+
+	&.block-scroll {
+		overflow: hidden;
+	}
 }
