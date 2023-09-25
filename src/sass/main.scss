@@ -1,5 +1,8 @@
 @use 'normalize.css/normalize';
-@use './nav&header' as *;
+@use './colors' as *;
+@use './nav' as *;
+@use './header' as *;
+
 *,
 *:before,
 *:after {
@@ -16,10 +19,16 @@ html {
 body {
 	font-size: 1.6rem;
 	color: #fff;
-	background-color: rgb(164, 157, 148);
-	height: 20000px;
+	background-color: $secondary-color;
+	// height: 20000px;
 
 	&.block-scroll {
 		overflow: hidden;
 	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
 }

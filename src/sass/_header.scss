@@ -1,0 +1,20 @@
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	height: calc(100vh - 100px);
+
+    
+	&__box-img {
+        position: relative;
+		.header__img {
+			width: 300px;
+		}
+	}
+
+	&__text {
+		position: relative;
+        display: block;
+	}
+}
