@@ -100,7 +100,7 @@
 			transition: 0.3s;
 
 			&:hover {
-				color: $primary-color;
+				color: $secondary-color;
 			}
 
 			&::after {
@@ -109,7 +109,7 @@
 				left: 0;
 				height: 2px;
 				width: 100%;
-				background-color: $primary-color;
+				background-color: $secondary-color;
 				transform: scaleX(0);
 				transition: transform 0.3s;
 				transform-origin: left;

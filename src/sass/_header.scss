@@ -1,20 +1,38 @@
+@use './colors' as *;
+
 .header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: relative;
 	margin-top: 100px;
 	height: calc(100vh - 100px);
+	background-image: url(../img/headerBGsmall.jpg);
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-    
-	&__box-img {
-        position: relative;
-		.header__img {
-			width: 300px;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000000;
+		opacity: 0.3; /* Dodawanie przyciemnienia */
+		z-index: 0;
+	}
+	&__content {
+		position: absolute;
+		padding: 1em;
+		z-index: 1;
+
+		&-title {
+			font-family: 'Raleway',cursive;
+			color: $secondary-color;
 		}
 	}
 
-	&__text {
-		position: relative;
-        display: block;
+	&__link {
+		position: absolute;
+		bottom: 0;
 	}
 }

@@ -19,7 +19,7 @@ html {
 body {
 	font-size: 1.6rem;
 	color: #fff;
-	background-color: $secondary-color;
+	background-color: $background-color;
 	// height: 20000px;
 
 	&.block-scroll {
@@ -31,4 +31,19 @@ body {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
+}
+
+.attribution {
+	position: absolute;
+	margin: 1em;
+	right: 0;
+	bottom: 0;
+	font-style: italic;
+	z-index: 1;
+
+	&__link {
+		padding: 1em 0.1em;
+		color: #fff;
+		text-decoration-color: #ff000f;
+	}
 }
