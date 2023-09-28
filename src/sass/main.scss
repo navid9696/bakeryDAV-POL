@@ -1,7 +1,8 @@
 @use 'normalize.css/normalize';
-@use './colors' as *;
 @use './nav' as *;
 @use './header' as *;
+@use './colors' as *;
+@use './keyframes' as *;
 
 *,
 *:before,
@@ -20,7 +21,7 @@ body {
 	font-size: 1.6rem;
 	color: #fff;
 	background-color: $background-color;
-	// height: 20000px;
+	font-family: 'Open Sans', sans-serif;
 
 	&.block-scroll {
 		overflow: hidden;
@@ -32,5 +33,3 @@ body {
 	width: 100%;
 	max-width: 1200px;
 }
-
-
