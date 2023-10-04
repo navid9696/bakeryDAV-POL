@@ -1,6 +1,7 @@
-@use 'normalize.css/normalize';
+@use 'normalize.css/normalize' as *;
 @use './nav' as *;
 @use './header' as *;
+@use './aboutUs' as *;
 @use './colors' as *;
 @use './keyframes' as *;
 
