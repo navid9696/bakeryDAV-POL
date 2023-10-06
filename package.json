@@ -28,6 +28,7 @@
     "sass": "^1.66.1"
   },
   "dependencies": {
+    "bootstrap": "^5.3.2",
     "hamburgers": "^1.2.1",
     "normalize.css": "^8.0.1"
   }
