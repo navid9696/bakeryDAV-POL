@@ -1,11 +1,11 @@
 @use 'normalize.css/normalize';
 @use './colors' as *;
 @use '../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+@use '../node_modules/bootstrap/scss/bootstrap';
 @use './header';
 @use './nav';
 @use './aboutUs';
 @use './keyframes';
-@use '../node_modules/bootstrap/scss/bootstrap';
 
 *,
 *:before,
@@ -36,3 +36,4 @@ body {
 	width: 100%;
 	max-width: 1200px;
 }
+

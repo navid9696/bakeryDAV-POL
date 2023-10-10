@@ -1,5 +1,141 @@
+@use './colors' as *;
 
-.carousel-item {
-	height: 400px;
-	position: relative;
+.about-us {
+	padding: 2em;
+
+	&-title {
+		position: relative;
+		text-align: center;
+		font-size: 4rem;
+		color: $secondary-color;
+		font-family: 'Young Serif', serif;
+
+		&::after {
+			position: absolute;
+			margin: 0 auto;
+			bottom: 0;
+			left: 50%;
+			height: 2px;
+			width: 150px;
+			transform: translateX(-50%);
+			background-color: $secondary-color;
+			content: '';
+		}
+	}
+
+	&-heading {
+		margin: 2em 0;
+		font-size: 1.6rem;
+		text-align: center;
+		letter-spacing: 0px;
+		font-weight: bolder;
+		text-shadow: 1px 1px #ffffff81;
+	}
+}
+.carousel {
+	margin: 2em auto;
+	max-width: 1000px;
+	height: 300px;
+
+	.carousel-item {
+		max-width: 1000px;
+		height: 300px;
+		position: relative;
+
+		.img-dimensions {
+			height: 100%;
+		}
+	}
+}
+
+.about-us__cards {
+	.about-us__card {
+		position: relative;
+		margin: 1em 0;
+		height: 450px;
+		color: #fff;
+		text-align: center;
+		perspective: 999px;
+
+		&:hover {
+			.about-us__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+
+			.about-us__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			background-position: center;
+			transition: transform 1s, opacity 1s;
+
+			&--first {
+				background-image: linear-gradient(45deg, #bf6a25ae, #000000d2), url(../../dist/img/placeholder.jpg);
+			}
+
+			&--second {
+				background-image: linear-gradient(45deg, #ff8d2fae, #000000d2), url(../../dist/img/placeholder.jpg);
+			}
+
+			&--third {
+				background-image: linear-gradient(45deg, #ffa963ae, #000000d2), url(../../dist/img/placeholder.jpg);
+			}
+
+			&-title {
+				font-family: 'Young Serif', serif;
+				font-size: 2.8rem;
+			}
+
+			&-info {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+
+				&-icon {
+					margin-left: 0.5em;
+					width: 25px;
+					height: 25px;
+				}
+			}
+		}
+
+		&-info {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-image: radial-gradient(circle at top right, $secondary-color 0%, $background-color 100%);
+			border-radius: 8px;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				top: 1.2em;
+				font-family: 'Young Serif', serif;
+				font-size: 2.8rem;
+			}
+
+			&-description {
+				margin: 0 auto;
+				width: 75%;
+			}
+		}
+	}
 }

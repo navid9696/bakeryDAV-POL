@@ -5,9 +5,10 @@
 	margin-top: 100px;
 	height: calc(100vh - 100px);
 	background-image: url(../img/headerBGsmall.jpg);
-	background-position: right;
+	background-position: center top;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 
 	&::after {
 		content: '';
@@ -43,6 +44,7 @@
 			&-title {
 				font-size: 2.6rem;
 				letter-spacing: 1px;
+				word-spacing: 10px;
 				font-family: 'Raleway', cursive;
 				color: $secondary-color;
 			}
@@ -90,6 +92,7 @@
 		&-attribution {
 			position: absolute;
 			margin: 1em;
+			margin-bottom: 0;
 			right: 0;
 			bottom: 0;
 			font-style: italic;
