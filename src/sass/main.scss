@@ -14,10 +14,15 @@
 	padding: 0;
 	margin: 0;
 }
+html,
+body {
+	height: 100%;
+}
 
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	height: -webkit-fill-available;
 }
 
 body {
@@ -36,4 +41,3 @@ body {
 	width: 100%;
 	max-width: 1200px;
 }
-
