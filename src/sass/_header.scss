@@ -9,7 +9,7 @@
 	background-position: bottom right;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+	// background-attachment: fixed;
 	overflow: hidden;
 
 	&::after {
@@ -20,7 +20,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: #000000;
-		opacity: 0.2;
+		opacity: 0.3;
 		z-index: 0;
 	}
 
@@ -45,7 +45,7 @@
 			}
 
 			&-title {
-				font-size: 2.6rem;
+				font-size: 3.8rem;
 				letter-spacing: 1px;
 				word-spacing: 10px;
 				font-family: 'Raleway', cursive;
@@ -53,15 +53,15 @@
 			}
 
 			&-description {
-				margin-top: 4em;
-				font-size: 1.6rem;
+				margin-top: 3em;
+				font-size: 2rem;
 				font-style: italic;
 				letter-spacing: 1px;
 				color: #fff;
 			}
 
 			&-btn {
-				margin-top: 4em;
+				margin-top: 3em;
 				padding: 1em 1.5em;
 				background-color: $secondary-color;
 				color: #000000;

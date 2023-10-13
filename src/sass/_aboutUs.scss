@@ -1,26 +1,10 @@
 @use './colors' as *;
 
 .about-us {
-	padding: 2em;
+	background-color: #f1f1f1;
 
 	&-title {
-		position: relative;
-		text-align: center;
-		font-size: 4rem;
-		color: $secondary-color;
-		font-family: 'Young Serif', serif;
-
-		&::after {
-			position: absolute;
-			margin: 0 auto;
-			bottom: 0;
-			left: 50%;
-			height: 2px;
-			width: 150px;
-			transform: translateX(-50%);
-			background-color: $secondary-color;
-			content: '';
-		}
+		color: $primary-color;
 	}
 
 	&-heading {
@@ -28,8 +12,14 @@
 		font-size: 1.6rem;
 		text-align: center;
 		letter-spacing: 0px;
+		color: #000;
 		font-weight: bolder;
 		text-shadow: 1px 1px #ffffff81;
+	}
+
+	&-description {
+		color: #000;
+		font-size: 1.4rem;
 	}
 }
 .carousel {
@@ -37,13 +27,17 @@
 	max-width: 1000px;
 	height: 300px;
 
-	.carousel-item {
-		max-width: 1000px;
-		height: 300px;
-		position: relative;
+	&-inner {
+		border-radius: 8px;
 
-		.img-dimensions {
-			height: 100%;
+		.carousel-item {
+			max-width: 1000px;
+			height: 300px;
+			position: relative;
+
+			.img-dimensions {
+				height: 100%;
+			}
 		}
 	}
 }
@@ -133,6 +127,7 @@
 			}
 
 			&-description {
+				padding-top: 3em;
 				margin: 0 auto;
 				width: 75%;
 			}

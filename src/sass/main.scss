@@ -5,6 +5,7 @@
 @use './header';
 @use './nav';
 @use './aboutUs';
+@use './ourProducts';
 @use './keyframes';
 
 *,
@@ -41,3 +42,51 @@ body {
 	width: 100%;
 	max-width: 1200px;
 }
+
+.section-padding {
+	padding: 2em;
+}
+
+.title--dark {
+	position: relative;
+	margin-bottom: 2em;
+	text-align: center;
+	font-size: 4rem;
+	color: $primary-color;
+	font-family: 'Young Serif', serif;
+
+	&::after {
+		position: absolute;
+		margin: 0 auto;
+		bottom: 0;
+		left: 50%;
+		height: 3px;
+		width: 200px;
+		transform: translateX(-50%);
+		background-color: $primary-color;
+		content: '';
+	}
+}
+
+.title--light {
+	position: relative;
+	margin-bottom: 2em;
+	text-align: center;
+	font-size: 4rem;
+	color: $secondary-color;
+	font-family: 'Young Serif', serif;
+
+	&::after {
+		position: absolute;
+		margin: 0 auto;
+		bottom: 0;
+		left: 50%;
+		height: 3px;
+		width: 200px;
+		transform: translateX(-50%);
+		background-color: $secondary-color;
+		content: '';
+	}
+}
+
+

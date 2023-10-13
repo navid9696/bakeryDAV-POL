@@ -1,0 +1,62 @@
+@use './colors' as *;
+
+.our-products {
+	&__cards {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+        flex-direction: column;
+		flex-wrap: wrap;
+		margin: 1em 0;
+		padding: 2em;
+		height: 350px;
+		width: auto;
+		overflow: hidden;
+		border-radius: 12px;
+		background-color: #f8f8f8;
+
+		.image {
+			position: relative;
+			height: 55%;
+			width: 100%;
+            border-radius: 12px;
+			overflow: hidden;
+		}
+		&-img {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			transition: scale 0.5s;
+
+			&:hover {
+				scale: 1.5;
+			}
+		}
+
+		&-title {
+			margin: 1em 0;
+			font-family: 'Raleway', sans-serif;
+			font-size: 2rem;
+			text-transform: uppercase;
+			font-weight: bolder;
+			text-align: left;
+			color: $secondary-color;
+		}
+
+		&-description {
+			font-style: italic;
+			font-size: 1.2rem;
+			word-wrap: break-word;
+			text-align: left;
+			color: #141414;
+		}
+	}
+}
