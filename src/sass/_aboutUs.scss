@@ -17,36 +17,42 @@
 		text-shadow: 1px 1px #ffffff81;
 	}
 
-	&-description {
-		color: #000;
-		font-size: 1.4rem;
+	&__our-story {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		.about-us-description {
+			min-width: min-content;
+			max-width: 800px;
+			text-align: center;
+			color: #000;
+			font-size: 1.4rem;
+		}
 	}
 }
 .carousel {
-	margin: 2em auto;
-	max-width: 1000px;
-	height: 300px;
+	margin: 2em 0;
+	// aspect ratio 4:3
+	width: 260px;
+	height: 195px;
 
-	&-inner {
-		border-radius: 8px;
-
-		.carousel-item {
-			max-width: 1000px;
-			height: 300px;
-			position: relative;
-
-			.img-dimensions {
-				height: 100%;
-			}
-		}
+	.carousel-inner,
+	.carousel-item,
+	.carousel-img {
+		width: 100%;
+		height: 100%;
 	}
 }
 
 .about-us__cards {
 	.about-us__card {
+		// aspect ratio 9:16
 		position: relative;
 		margin: 1em 0;
 		height: 450px;
+		width: 253px;
 		color: #fff;
 		text-align: center;
 		perspective: 999px;
@@ -72,15 +78,18 @@
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: linear-gradient(45deg, #bf6a25ae, #000000d2), url(../../dist/img/placeholder.jpg);
+				background-image: linear-gradient(45deg, #bf6a25ae, #000000d2),
+					url(../../dist/img/387471916_2577865512362920_4462435419232931321_n.jpg);
 			}
 
 			&--second {
-				background-image: linear-gradient(45deg, #ff8d2fae, #000000d2), url(../../dist/img/placeholder.jpg);
+				background-image: linear-gradient(45deg, #ff8d2fae, #000000d2),
+					url(../../dist/img/387472696_628504752699391_3647111443524929869_n.jpg);
 			}
 
 			&--third {
-				background-image: linear-gradient(45deg, #ffa963ae, #000000d2), url(../../dist/img/placeholder.jpg);
+				background-image: linear-gradient(45deg, #ffa963ae, #000000d2),
+					url(../../dist/img/393290265_345597004654379_6785661523862748045_n.jpg);
 			}
 
 			&-title {
@@ -108,6 +117,7 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
+			padding: 2em;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -120,6 +130,7 @@
 			&-title {
 				position: absolute;
 				left: 50%;
+				width: 100%;
 				transform: translateX(-50%);
 				top: 1.2em;
 				font-family: 'Young Serif', serif;
