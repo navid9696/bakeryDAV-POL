@@ -2,15 +2,20 @@
 
 .our-products {
 	&__cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-		// grid-template-rows: repeat(auto-fit,minmax(250px,350px));
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+		// justify-content: center;
+		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
 		gap: 50px;
 	}
 
 	&__card {
 		height: 400px;
+		min-width: 250px;
+		max-width: 300px;
 		border-radius: 12px;
 		background-color: #f8f8f8;
 

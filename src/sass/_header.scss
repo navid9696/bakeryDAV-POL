@@ -68,11 +68,12 @@
 				font-weight: 700;
 				text-transform: uppercase;
 				border-radius: 12px;
-				border: none;
-				transition: background-color 0.5s, color 0.5s;
+				border: 3px solid #000;
+				transition: background-color 0.5s, color 0.5s, border 0.5s;
 
 				&:hover {
 					background-color: #1e1e1e;
+					border: 3px solid $secondary-color;
 					color: $secondary-color;
 					cursor: pointer;
 				}
