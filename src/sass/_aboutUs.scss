@@ -8,7 +8,7 @@
 	}
 
 	&-heading {
-		margin: 2em 0;
+		margin-bottom: 2em;
 		padding: 0.5em;
 		font-size: 1.6rem;
 		text-align: center;
@@ -18,6 +18,10 @@
 		text-shadow: 1px 1px #ffffff81;
 		border-radius: 8px;
 		border: 2px solid #000;
+
+		&:last-of-type {
+			margin-bottom: 4em;
+		}
 	}
 
 	&__our-story {
@@ -27,11 +31,16 @@
 		flex-direction: column;
 
 		.about-us-description {
+			margin: 2em 0;
 			min-width: min-content;
 			max-width: 800px;
 			text-align: center;
 			color: #000;
 			font-size: 1.4rem;
+
+			&:last-of-type {
+				margin-bottom: 6em;
+			}
 		}
 	}
 }

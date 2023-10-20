@@ -4,7 +4,6 @@ const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
 
-
 const overlayVisibility = (overlay.style.visibility = 'hidden')
 
 const closeOverlay = () => {

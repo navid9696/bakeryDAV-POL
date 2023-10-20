@@ -12,8 +12,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:ital,wght@1,500;1,700&family=Young+Serif&display=swap"
         rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/8a1b60f90d.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzSIsd_7PfaI2rQhoXSF34BO_w_scGtxo&callback=initMap&libraries=&v=weekly"
+        defer></script>
     <link rel="stylesheet" href="./dist/css/main.min.css">
+    <script src="../dist/js/googleMaps.min.js"></script>
 </head>
 
 <body>
@@ -179,7 +185,15 @@
 </section>
         <section id="products" class="our-products section-padding">
     <div class="wrapper">
-        <h2 class="our-products-title title--light">Nasze Produkty</h2>
+        <h2 class="our-products__title title--light">Nasze Produkty</h2>
+        <p class="our-products__description">W naszym asortymencie znajdziesz różnorodne rodzaje chlebów i bułek, które
+            wyróżniają się niezwykłym aromatem, dzięki wykorzystaniu naturalnego zakwasu w procesie wypieku. Jesteśmy
+            dumni z tego, że nasze produkty zachowują autentyczny smak tradycyjnego pieczywa.
+
+            Nasz wybór bułek jest zróżnicowany, obejmuje zarówno te tradycyjne, wypiekane z mąki pszennej, jak i te
+            nietypowe, które powstają z różnych rodzajów mąki. W naszej ofercie znajdziesz bułki z dodatkiem
+            aromatycznych ziaren słonecznika, delikatnej cebuli oraz bogatych w ziarna, co nadaje im wyjątkowy
+            charakter.</p>
         <div class="our-products__cards">
 
             <div class="our-products__card">
@@ -305,33 +319,79 @@
 
 
         </div>
+        <p class="our-products__description">Nasze chleby mieszane to kolejny powód, by odwiedzić naszą piekarnię. Są
+            one przygotowywane z połączenia mąki pszennej i żytniej, co nadaje im nie tylko wyjątkowy smak, ale także
+            pożądaną konsystencję. Oferujemy również chleby na wagę, aby dostosować ilość do Twoich potrzeb.
+
+            Przykładamy dużą uwagę do jakości naszych produktów i jesteśmy przekonani, że natura dostarcza wszystkiego,
+            czego potrzeba, aby wypiekać wyjątkowe pieczywo. Dlatego też nie stosujemy żadnych polepszaczy smaku ani
+            konserwantów. Jesteśmy przekonani, że nasze wypieki będą nie tylko smaczne, ale także zdrowe i pełne
+            autentycznego smaku, którym będziesz cieszyć się przy każdym kęsie.</p>
     </div>
 </section>
         <section id="gallery" class="gallery section-padding">
-    <h2 class="gallery__title title--dark">Galeria</h2>
-    <div class="gallery-grid__container">
-        <img class="gallery__photo" src="../dist/img/370063936_6480153338777059_2561016885055974530_n.jpg"
-            alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/387471916_2577865512362920_4462435419232931321_n.jpg"
-            alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/387472696_628504752699391_3647111443524929869_n.jpg"
-            alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/393290265_345597004654379_6785661523862748045_n.jpg"
-            alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/bread-white-big.jpg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/bread-white-small.jpg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/headerBGbig.jpg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/headerBGsmall.jpg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/logo.png" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/placeholder.jpg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/icons/arrow-down.svg" alt="Sample photo">
-        <img class="gallery__photo" src="../dist/img/icons/click-svgrepo-com.svg" alt="Sample photo">
+    <div class="wrapper">
+        <h2 class="gallery__title title--dark">Galeria</h2>
+        <ul class="gallery-flex__container">
+            <li class="gallery__img-container"><img class="gallery__photo"
+                    src="../dist/img/370063936_6480153338777059_2561016885055974530_n.jpg" alt="Sample photo"></li>
+            <li class="gallery__img-container"> <img class="gallery__photo"
+                    src="../dist/img/387472696_628504752699391_3647111443524929869_n.jpg" alt="Sample photo"></li>
+            <li class="gallery__img-container"> <img class="gallery__photo"
+                    src="../dist/img/387471916_2577865512362920_4462435419232931321_n.jpg" alt="Sample photo"></li>
+            <li class="gallery__img-container"> <img class="gallery__photo"
+                    src="../dist/img/393290265_345597004654379_6785661523862748045_n.jpg" alt="Sample photo"></li>
+            <li class="gallery__img-container"> <img class="gallery__photo" src="../dist/img/bread-white-big.jpg"
+                    alt="Sample photo"></li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/bread-white-small.jpg"
+                    alt="Sample photo"></li>
+
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/headerBGbig.jpg"
+                    alt="Sample photo"></li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/headerBGsmall.jpg"
+                    alt="Sample photo">
+            </li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/logo.png"
+                    alt="Sample photo">
+            </li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/placeholder.jpg"
+                    alt="Sample photo">
+            </li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/icons/arrow-down.svg"
+                    alt="Sample photo"></li>
+            <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/icons/click-svgrepo-com.svg"
+                    alt="Sample photo"></li>
+        </ul>
+    </div>
+</section>
+        <section id="contact" class="contact section-padding">
+    <h2 class="contact__title">Kontakt</h2>
+    <div class="contact__container">
+
+        <div class="contact__info">
+            <h3 class="contact__heading">Masz pytanie? Skontaktuj się z nami!</h3>
+
+            <div class="contact__social-media social-media">
+                <div class="social-media__image"><img class="image__icon" src="../dist/img/icons/facebook-svgrepo-com.svg" alt=""></div>
+                <a class="social-media__link" href="https://www.facebook.com/profile.php?id=100070507284442"></a>
+            </div>
+
+            <div class="contact__email email">
+                <div class="email__image"><img class="image__icon"
+                        src="../dist/img/icons/email-svgrepo-com.svg" alt=""></div>
+                <a class="email__link"
+                    href="mailto:kontakt.piekarniabrzeczek@gmail.com">kontakt.piekarniabrzeczek@gmail.com</a>
+            </div>
+        </div>
+
+        <div id="gmp-map"></div>
+
     </div>
 </section>
     </main>
     
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script src="./dist/js/main.min.js"></script>
 </body>
 
