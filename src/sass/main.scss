@@ -1,7 +1,7 @@
-@use 'normalize.css/normalize';
 @use './colors' as *;
 @use '../node_modules/hamburgers/_sass/hamburgers/hamburgers';
 @use '../node_modules/bootstrap/scss/bootstrap';
+@use 'normalize.css/normalize';
 @use './header';
 @use './nav';
 @use './aboutUs';
@@ -17,6 +17,11 @@
 	padding: 0;
 	margin: 0;
 }
+
+p{
+	margin-bottom: 0;
+}
+
 html,
 body {
 	height: 100%;
@@ -25,7 +30,6 @@ body {
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	height: -webkit-fill-available;
 }
 
 body {
@@ -51,7 +55,7 @@ body {
 
 .title--dark {
 	position: relative;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	text-align: center;
 	font-size: 4rem;
 	color: $primary-color;
@@ -72,7 +76,7 @@ body {
 
 .title--light {
 	position: relative;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	text-align: center;
 	font-size: 4rem;
 	color: $secondary-color;
@@ -90,5 +94,3 @@ body {
 		content: '';
 	}
 }
-
-

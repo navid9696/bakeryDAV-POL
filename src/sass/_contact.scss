@@ -1,12 +1,128 @@
 .contact {
-	background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,.6)), url(../../dist/img/various-buns-breakfast-small.jpg);
+	position: relative;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+		url(../../dist/img/various-buns-breakfast-small.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		.contact__info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+
+			.icons {
+				width: 30px;
+				height: 30px;
+				margin: 1em 0;
+			}
+
+			.svg-icon--dimmed {
+				transition: stroke 0.3s ease, fill 0.3s ease;
+			}
+
+			.contact-email {
+				margin-bottom: 2em;
+
+				&__link {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					text-decoration: none;
+
+					&:hover {
+						.svg-icon--dimmed {
+							stroke: #d0d0d0;
+						}
+						.contact-email__address {
+							color: #d0d0d0;
+						}
+					}
+
+					
+
+					.contact-email__address {
+						font-size: 1.4rem;
+						word-spacing: 0px;
+						color: #fff;
+						transition: color 0.3s ease;
+					}
+				}
+			}
+
+			.contact-phone {
+				margin-bottom: 2em;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				&__icon {
+					&:hover {
+						.svg-icon--dimmed,
+						.contact-phone__number {
+							fill: #d0d0d0;
+							color: #8f5353;
+						}
+					}
+				}
+
+				&__number {
+					margin-bottom: 0;
+					font-size: 1.8rem;
+					color: #8f5353;
+					transition: color 0.3s ease;
+
+					&:hover {
+						.svg-icon--dimmed,
+						.contact-phone__number {
+							fill: #d0d0d0;
+							color: #d0d0d0;
+						}
+					}
+				}
+			}
+		}
+
+		&__heading {
+			margin: 2.5em 0;
+			padding: 0.5em;
+			font-size: 1.6rem;
+			text-align: center;
+			letter-spacing: 0px;
+			color: #ffffff;
+			font-weight: bolder;
+			text-shadow: 1px 1px #ffffff81;
+			border-radius: 8px;
+			border: 2px solid #ffffff;
+		}
+	}
+
+	&-attribution {
+		position: absolute;
+		margin: 1em;
+		margin-bottom: 0;
+		right: 0;
+		bottom: 0;
+		font-style: italic;
+
+		&__link {
+			padding: 5em 0.1em;
+			color: #fff;
+			text-decoration-color: #ff000f;
+		}
+	}
 }
 
 #gmp-map {
 	height: 300px;
 	width: 100%;
-    border-radius: 6px;
+	border-radius: 6px;
 }
