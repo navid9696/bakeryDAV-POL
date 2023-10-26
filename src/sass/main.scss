@@ -1,7 +1,7 @@
-@use './reset';
 @use './colors' as *;
-// @use '../../node_modules/bootstrap/scss/bootstrap.scss';
+@use '../../node_modules/bootstrap/scss/bootstrap.scss';
 @use '../../node_modules/normalize-scss/sass/normalize';
+@use './reset';
 @use './hamburger';
 @use './header';
 @use './nav';
