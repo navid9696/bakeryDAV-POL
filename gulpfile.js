@@ -14,6 +14,7 @@ const reload = browserSync.reload
 const plumber = require('gulp-plumber')
 
 
+
 const paths = {
 	html: './html/**/*.kit',
 	sass: './src/sass/**/*.scss',

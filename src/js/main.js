@@ -1,9 +1,9 @@
+
 const navBtn = document.querySelector('.hamburger')
 const nav = document.querySelector('.nav')
 const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
-
 const overlayVisibility = (overlay.style.visibility = 'hidden')
 
 const closeOverlay = () => {
@@ -33,7 +33,6 @@ const handleNav = () => {
 	handleOverlay()
 	blockScroll.classList.toggle('block-scroll')
 }
-
 
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))

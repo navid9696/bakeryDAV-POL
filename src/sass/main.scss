@@ -1,26 +1,16 @@
+@use './reset';
 @use './colors' as *;
-@use '../node_modules/hamburgers/_sass/hamburgers/hamburgers';
-@use '../node_modules/bootstrap/scss/bootstrap';
-@use 'normalize.css/normalize';
+// @use '../../node_modules/bootstrap/scss/bootstrap.scss';
+@use '../../node_modules/normalize-scss/sass/normalize';
+@use './hamburger';
 @use './header';
 @use './nav';
 @use './aboutUs';
 @use './ourProducts';
 @use './gallery';
 @use './contact';
+@use './footer';
 @use './keyframes';
-
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-
-p {
-	margin-bottom: 0;
-}
 
 html,
 body {
