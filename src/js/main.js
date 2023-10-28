@@ -3,8 +3,13 @@ const nav = document.querySelector('.nav')
 const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
-
 const overlayVisibility = (overlay.style.visibility = 'hidden')
+const footerYear = document.querySelector('.footer__year')
+
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
+}
 
 const closeOverlay = () => {
 	handleOverlay()
@@ -34,6 +39,37 @@ const handleNav = () => {
 	blockScroll.classList.toggle('block-scroll')
 }
 
+// Inicjalizacja EmailJS z kluczem publicznym
+;(function () {
+	const publicKey = 'lgkz6CPgh6GbEuCoO'
+	emailjs.init(publicKey)
+})()
+
+// Obsługa zdarzenia po załadowaniu strony
+window.onload = () => {
+	const contactForm = document.getElementById('contact-form')
+
+	// Nasłuchiwanie zdarzenia submit formularza
+	contactForm.addEventListener('submit', event => {
+		event.preventDefault()
+
+		// Generowanie pięciocyfrowej liczby do zmiennej contact_number
+		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
+
+		// Wykorzystanie odpowiednich ID usługi i szablonu z wcześniejszych kroków
+		emailjs
+			.sendForm('service_4rabq7e', 'template_6wtj7m3', contactForm)
+			.then(() => {
+				console.log('SUCCESS!')
+			})
+			.catch(error => {
+				console.log('FAILED...', error)
+			})
+	})
+}
+
+
+handleCurrentYear()
 
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))

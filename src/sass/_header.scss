@@ -26,6 +26,7 @@
 
 	&__container {
 		margin-top: 100px;
+		padding: 0 2em;
 		height: calc(100dvh - 100px);
 		display: flex;
 		flex-direction: column;
@@ -34,8 +35,7 @@
 
 		&-content {
 			position: absolute;
-			padding: 1em;
-			margin-top: 2em;
+			margin-top: 1em;
 			text-align: center;
 			z-index: 1;
 
@@ -53,7 +53,7 @@
 			}
 
 			&-description {
-				margin-top: 3em;
+				margin-top: 1em;
 				font-size: 2rem;
 				font-style: italic;
 				letter-spacing: 1px;
