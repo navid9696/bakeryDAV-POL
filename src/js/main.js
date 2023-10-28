@@ -5,6 +5,11 @@ const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
 const overlayVisibility = (overlay.style.visibility = 'hidden')
 const footerYear = document.querySelector('.footer__year')
+const contactForm = document.querySelector('#contact-form')
+const nameForm = document.querySelector('#name')
+const emailForm = document.querySelector('#email')
+const msgForm = document.querySelector('#msg')
+const btnForm = document.querySelector('.contact-form__input-btn')
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
@@ -38,21 +43,13 @@ const handleNav = () => {
 	handleOverlay()
 	blockScroll.classList.toggle('block-scroll')
 }
-
-// Inicjalizacja EmailJS z kluczem publicznym
-;(function () {
-	const publicKey = 'lgkz6CPgh6GbEuCoO'
-	emailjs.init(publicKey)
-})()
-
-// Obsługa zdarzenia po załadowaniu strony
-window.onload = () => {
-	const contactForm = document.getElementById('contact-form')
-
-	// Nasłuchiwanie zdarzenia submit formularza
-	contactForm.addEventListener('submit', event => {
-		event.preventDefault()
-
+const checkForm = () => {
+	if (nameForm.value == '' || emailForm.value == '' || msgForm.value == '') {
+		console.log('error')
+		nameForm.setAttribute('required', '')
+		emailForm.setAttribute('required', '')
+		msgForm.setAttribute('required', '')
+	} else if (nameForm.value !== '' || emailForm.value !== '' || msgForm.value !== '') {
 		// Generowanie pięciocyfrowej liczby do zmiennej contact_number
 		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
 
@@ -65,9 +62,22 @@ window.onload = () => {
 			.catch(error => {
 				console.log('FAILED...', error)
 			})
+	}
+}
+// Inicjalizacja EmailJS z kluczem publicznym
+;(function () {
+	const publicKey = 'lgkz6CPgh6GbEuCoO'
+	emailjs.init(publicKey)
+})()
+
+// Obsługa zdarzenia po załadowaniu strony
+window.onload = () => {
+	// Nasłuchiwanie zdarzenia submit formularza
+	contactForm.addEventListener('submit', event => {
+		event.preventDefault()
+		checkForm()
 	})
 }
-
 
 handleCurrentYear()
 

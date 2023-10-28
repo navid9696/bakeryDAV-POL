@@ -1,0 +1,62 @@
+@use './colors' as *;
+
+.form-section {
+	background-color: #fff;
+	.contact-form {
+		box-sizing: border-box;
+		padding: 2em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 3px solid #000;
+		border-radius: 8px;
+
+		&__labels {
+			margin-bottom: 0.5em;
+			font-size: 2rem;
+			font-weight: bold;
+			color: #000;
+		}
+
+		&__inputs {
+			margin-bottom: 2em;
+		}
+
+		&__textarea {
+		}
+
+		&__inputs,
+		&__textarea {
+			border: 2px solid #000;
+			border-radius: 6px;
+			&::placeholder {
+				font-size: 1.2rem;
+				font-weight: lighter;
+			}
+
+			&:required:invalid {
+				border: 2px dashed rgb(184, 0, 0);
+                background-color: #ff00000d;
+			}
+
+			&:focus {
+				outline: 1px solid #000;
+			}
+
+			&:required:valid {
+				border: 2px solid rgb(0, 187, 0);
+			}
+		}
+
+		&__input-btn {
+			margin-top: 1.5em;
+			padding: 0.5em 2em;
+			font-weight: bold;
+			border: 2px solid #000;
+			border-radius: 8px;
+			color: #000;
+			background-color: $secondary-color;
+		}
+	}
+}
