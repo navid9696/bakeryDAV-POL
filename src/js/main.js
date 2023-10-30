@@ -3,14 +3,20 @@ const nav = document.querySelector('.nav')
 const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
-const overlayVisibility = (overlay.style.visibility = 'hidden')
 const footerYear = document.querySelector('.footer__year')
 const contactForm = document.querySelector('#contact-form')
 const nameForm = document.querySelector('#name')
 const emailForm = document.querySelector('#email')
 const msgForm = document.querySelector('#msg')
 const btnForm = document.querySelector('.contact-form__input-btn')
-import validator from 'email-validator'
+
+const overlayVisibility = (overlay.style.visibility = 'hidden')
+
+const validateEmail = email => {
+	const emailReg =
+		/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
+	return emailReg.test(email)
+}
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
@@ -44,17 +50,10 @@ const handleNav = () => {
 	handleOverlay()
 	blockScroll.classList.toggle('block-scroll')
 }
-const checkForm = () => {
-	if (nameForm.value == '' || emailForm.value == '' || msgForm.value == '') {
-		console.log('error')
-		nameForm.setAttribute('required', '')
-		emailForm.setAttribute('required', '')
-		msgForm.setAttribute('required', '')
-	} else if (nameForm.value !== '' || emailForm.value !== '' || msgForm.value !== '') {
-		// Generowanie pięciocyfrowej liczby do zmiennej contact_number
-		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
 
-		// Wykorzystanie odpowiednich ID usługi i szablonu z wcześniejszych kroków
+const checkForm = () => {
+	if (nameForm.value !== '' && emailForm.validity.patternMismatch == false && msgForm.value !== '') {
+		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
 		emailjs
 			.sendForm('service_4rabq7e', 'template_6wtj7m3', contactForm)
 			.then(() => {
@@ -63,19 +62,23 @@ const checkForm = () => {
 			.catch(error => {
 				console.log('FAILED...', error)
 			})
+	} else if (emailForm.validity.patternMismatch) {
+		console.log('error')
+		// nameForm.setAttribute('required', '')
+		// emailForm.setAttribute('required', '')
+		// msgForm.setAttribute('required', '')
 	}
 }
-// Inicjalizacja EmailJS z kluczem publicznym
+
 ;(function () {
 	const publicKey = 'lgkz6CPgh6GbEuCoO'
 	emailjs.init(publicKey)
 })()
 
-// Obsługa zdarzenia po załadowaniu strony
 window.onload = () => {
-	// Nasłuchiwanie zdarzenia submit formularza
 	contactForm.addEventListener('submit', event => {
 		event.preventDefault()
+
 		checkForm()
 	})
 }
