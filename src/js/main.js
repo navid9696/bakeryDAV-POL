@@ -5,6 +5,10 @@ const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
 const overlayVisibility = (overlay.style.visibility = 'hidden')
 const footerYear = document.querySelector('.footer__year')
+import validator from 'email-validator';
+
+
+
 
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
@@ -67,6 +71,9 @@ window.onload = () => {
 			})
 	})
 }
+
+
+
 
 
 handleCurrentYear()
