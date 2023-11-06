@@ -10,16 +10,28 @@ const emailForm = document.querySelector('#email')
 const msgForm = document.querySelector('#msg')
 const btnForm = document.querySelector('.contact-form__input-btn')
 const popup = document.querySelector('.contact-form__popup')
-const popupBtn = document.querySelector('.contact-form__popup-btn')
+const popupBtn = document.querySelector('.contact-form__popup-close')
 
-const overlayVisibility = (overlay.style.visibility = 'hidden')
+overlay.style.visibility = 'hidden'
 
 const validateEmail = email => {
 	const emailReg =
-		/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
-
-		if(emailReg.test(msgForm.value))
-	// return emailReg.test(email)
+		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/gim
+	console.log(emailReg.test(emailForm.value))
+	if (emailReg.test(emailForm.value) && msgForm.value !== '' && nameForm.value !== '') {
+		removeError(email)
+		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
+		emailjs
+			.sendForm('service_4rabq7e', 'template_6wtj7m3', contactForm)
+			.then(() => {
+				console.log('SUCCESS!')
+			})
+			.catch(error => {
+				console.log('FAILED...', error)
+			})
+	} else if (!emailReg.test(emailForm.value)) {
+		showError(email, 'Email jest nieprawidłowy!')
+	}
 }
 
 const handleCurrentYear = () => {
@@ -67,21 +79,50 @@ const removeError = input => {
 	formBox.classList.remove('error')
 }
 
+const checkErrors = () => {
+	const allInputs = document.querySelectorAll('.contact-form__box')
+	let errorCount = 0
+
+	allInputs.forEach(el => {
+		if (el.classList.contains('error')) {
+			errorCount++
+		}
+	})
+
+	if (errorCount === 0) {
+		blockScroll.classList.add('block-scroll')
+		popup.classList.add('show-popup')
+		overlay.style.visibility = 'visible'
+		setTimeout(function () {
+			overlay.classList.add('active')
+		}, 1)
+	}
+}
+
+const clearInputs = input => {
+	input.forEach(el => {
+		el.value = ''
+		removeError(el)
+	})
+}
+
+const popupBtnRemoveOverlay = e => {
+	e.preventDefault()
+	clearInputs([msgForm, nameForm, emailForm])
+	blockScroll.classList.remove('block-scroll')
+	setTimeout(function () {
+		overlay.style.visibility = 'hidden'
+	}, 300)
+	overlay.classList.remove('active')
+	popup.classList.remove('show-popup')
+}
+
 const checkForm = input => {
 	input.forEach(el => {
 		if (el.value === '') {
 			showError(el, el.placeholder)
 		} else {
 			removeError(el)
-			contactForm.contact_number.value = Math.floor(Math.random() * 100000)
-			emailjs
-				.sendForm('service_4rabq7e', 'template_6wtj7m3', contactForm)
-				.then(() => {
-					console.log('SUCCESS!')
-				})
-				.catch(error => {
-					console.log('FAILED...', error)
-				})
 		}
 	})
 }
@@ -92,9 +133,11 @@ const checkForm = input => {
 })()
 
 window.onload = () => {
-	contactForm.addEventListener('submit', e => {
+	btnForm.addEventListener('click', e => {
 		e.preventDefault()
 		checkForm([msgForm, nameForm, emailForm])
+		validateEmail(emailForm)
+		checkErrors()
 	})
 }
 
@@ -102,6 +145,7 @@ handleCurrentYear()
 
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))
+popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
 	link.addEventListener('click', closeOverlay)
 })

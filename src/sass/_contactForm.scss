@@ -96,6 +96,7 @@
 			border-radius: 8px;
 			border: 2px solid #000;
 			transition: top 0.5s;
+			z-index: 99999999;
 
 			&-text {
 				margin-bottom: 1em;
