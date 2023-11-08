@@ -1,17 +1,17 @@
 @use './colors' as *;
-@use '../../node_modules/bootstrap/scss/bootstrap.scss';
-@use '../../node_modules/normalize-scss/sass/normalize';
-@use './reset';
-@use './hamburger';
-@use './header';
-@use './nav';
-@use './aboutUs';
-@use './ourProducts';
-@use './gallery';
-@use './contact';
-@use './contactForm';
-@use './footer';
-@use './keyframes';
+@import './bootstrap';
+@import '../../node_modules/normalize-scss/sass/normalize';
+@import './reset';
+@import './hamburger';
+@import './header';
+@import './nav';
+@import './aboutUs';
+@import './ourProducts';
+@import './gallery';
+@import './contact';
+@import './contactForm';
+@import './footer';
+@import './keyframes';
 
 html,
 body {
