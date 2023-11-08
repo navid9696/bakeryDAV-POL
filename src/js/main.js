@@ -1,5 +1,5 @@
 const navBtn = document.querySelector('.hamburger')
-const nav = document.querySelector('.nav')
+const nav = document.querySelector('.nav__list')
 const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
 const blockScroll = document.body
@@ -18,6 +18,7 @@ const validateEmail = email => {
 	const emailReg =
 		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/gim
 	console.log(emailReg.test(emailForm.value))
+
 	if (emailReg.test(emailForm.value) && msgForm.value !== '' && nameForm.value !== '') {
 		removeError(email)
 		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
@@ -62,7 +63,7 @@ const handleOverlay = () => {
 
 const handleNav = () => {
 	navBtn.classList.toggle('is-active')
-	nav.classList.toggle('nav--active')
+	nav.classList.toggle('nav__list--active')
 	handleOverlay()
 	blockScroll.classList.toggle('block-scroll')
 }

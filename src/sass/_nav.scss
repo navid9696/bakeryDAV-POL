@@ -1,36 +1,36 @@
 @use './colors' as *;
 
-.navigation {
-	position: fixed;
-	display: flex;
+.nav {
 	height: 100px;
+	width: 100%;
+	position: fixed;
 	top: 0;
-	min-width: 100%;
-	align-items: center;
+	display: flex;
 	justify-content: space-between;
-	background-color: #fff;
+	align-items: center;
+	background-color: #f1f1f1;
 	z-index: 1000;
 
-	.logo,
+	&__logo,
 	.hamburger,
-	.nav {
+	&__list {
 		position: fixed;
 	}
-	.logo {
+	&__logo {
 		display: flex;
 		align-items: center;
 		z-index: 10;
 		cursor: pointer;
 
-		&__img {
+		.logo__img {
 			width: 150px;
 			height: 160px;
 		}
 	}
 
 	.hamburger {
-		right: 0;
 		padding: 1.5em;
+		right: 0;
 		z-index: 21;
 
 		&:hover {
@@ -53,21 +53,22 @@
 		}
 	}
 	.overlay {
+		position: absolute;
 		display: block;
-		opacity: 0;
 		transition: opacity 0.3s ease-in-out;
-		height: 1000vh;
-		min-width: 100%;
+		height: 100%;
+		width: 100%;
 		background-color: #000;
-		z-index: 20;
+		opacity: 0;
 		visibility: hidden;
+		z-index: 20;
 
 		&.active {
 			opacity: 0.7;
 		}
 	}
 
-	.nav {
+	&__list {
 		height: 100%;
 		width: 75%;
 		right: 0;
@@ -89,39 +90,39 @@
 			transform: translateY(0);
 			transition: transform 0.3s ease-in-out;
 		}
+	}
 
-		&__item {
-			position: relative;
-			display: block;
-			margin: 0 auto;
-			padding: 0.8em 1em;
-			text-align: center;
-			font-size: 2.1rem;
-			text-decoration: none;
-			color: #fff;
-			transition: 0.3s;
+	&__item {
+		margin: 0 auto;
+		padding: 0.8em 1em;
+		position: relative;
+		display: block;
+		text-align: center;
+		font-size: 2.1rem;
+		text-decoration: none;
+		color: #fff;
+		transition: 0.3s;
 
-			&:hover {
-				color: $secondary-color;
-			}
+		&:hover {
+			color: $secondary-color;
+		}
 
-			&::after {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				height: 2px;
-				width: 100%;
-				background-color: $secondary-color;
-				transform: scaleX(0);
-				transition: transform 0.3s;
-				transform-origin: left;
-				content: '';
-			}
+		&::after {
+			height: 2px;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			background-color: $secondary-color;
+			transform: scaleX(0);
+			transition: transform 0.3s;
+			transform-origin: left;
+			content: '';
+		}
 
-			&:hover::after {
-				transform: scaleX(1);
-				transform-origin: right;
-			}
+		&:hover::after {
+			transform: scaleX(1);
+			transform-origin: right;
 		}
 	}
 }
