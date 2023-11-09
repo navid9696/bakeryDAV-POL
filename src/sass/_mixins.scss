@@ -1,0 +1,39 @@
+@mixin title($color: $primary-color) {
+	position: relative;
+	margin-bottom: 1em;
+	text-align: center;
+	font-size: 4rem;
+	color: $color;
+	font-family: 'Young Serif', serif;
+
+	&::after {
+		position: absolute;
+		margin: 0 auto;
+		bottom: 0;
+		left: 50%;
+		height: 3px;
+		width: 200px;
+		transform: translateX(-50%);
+		background-color: $color;
+		content: '';
+	}
+}
+
+@mixin main-btn {
+    margin-top: 3em;
+    padding: 1em 1.5em;
+    background-color: $secondary-color;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: 2px solid #000;
+    transition: background-color 0.5s, color 0.5s, border 0.5s, border 0.5s;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #1e1e1e;
+      border: 2px solid $secondary-color;
+      color: $secondary-color;
+    }
+  }

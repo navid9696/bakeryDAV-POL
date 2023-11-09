@@ -1,4 +1,5 @@
 const navBtn = document.querySelector('.hamburger')
+const navBar = document.querySelector('.nav')
 const nav = document.querySelector('.nav__list')
 const overlay = document.querySelector('.overlay')
 const links = document.querySelectorAll('.nav__item')
@@ -11,6 +12,11 @@ const msgForm = document.querySelector('#msg')
 const btnForm = document.querySelector('.contact-form__input-btn')
 const popup = document.querySelector('.contact-form__popup')
 const popupBtn = document.querySelector('.contact-form__popup-close')
+const sections = document.querySelectorAll('section')
+const firstFourSections = Array.from(sections).slice(0, 4)
+const navbarHeight = navBar.clientHeight
+const headerBtn = document.querySelector('.header__btn-link')
+const headerArrowDown = document.querySelector('.header__arrow-link')
 
 overlay.style.visibility = 'hidden'
 
@@ -43,7 +49,7 @@ const handleCurrentYear = () => {
 const closeOverlay = () => {
 	handleOverlay()
 	navBtn.classList.remove('is-active')
-	nav.classList.remove('nav--active')
+	nav.classList.remove('nav__list--active')
 	blockScroll.classList.remove('block-scroll')
 }
 
@@ -144,9 +150,33 @@ window.onload = () => {
 
 handleCurrentYear()
 
+const scrollSpy = link => {
+	const targetId = link.getAttribute('href').substring(1)
+	const targetElement = document.getElementById(targetId)
+
+	if (targetElement) {
+		const targetPosition = targetElement.offsetTop - navbarHeight
+		window.scrollTo({
+			top: targetPosition,
+		})
+	}
+}
+
+const headerLinks = [headerBtn, headerArrowDown]
+
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
-	link.addEventListener('click', closeOverlay)
+	link.addEventListener('click', e => {
+		e.preventDefault()
+		closeOverlay()
+		scrollSpy(link)
+	})
+})
+headerLinks.forEach(link => {
+	link.addEventListener('click', e => {
+		e.preventDefault()
+		scrollSpy(link)
+	})
 })

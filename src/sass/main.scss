@@ -1,7 +1,8 @@
-@use './colors' as *;
+@import'./colors';
 @import './bootstrap';
 @import '../../node_modules/normalize-scss/sass/normalize';
 @import './reset';
+@import './mixins';
 @import './hamburger';
 @import './header';
 @import './nav';
@@ -33,6 +34,7 @@ body {
 		overflow: hidden;
 	}
 }
+
 
 .wrapper {
 	margin: 0 auto;
