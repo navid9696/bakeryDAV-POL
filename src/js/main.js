@@ -17,15 +17,19 @@ const firstFourSections = Array.from(sections).slice(0, 4)
 const navbarHeight = navBar.clientHeight
 const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
+const headerLinks = [headerBtn, headerArrowDown]
 
 overlay.style.visibility = 'hidden'
+
+emailjs.init('lgkz6CPgh6GbEuCoO')
+
+let emailValid = 0
 
 const validateEmail = email => {
 	const emailReg =
 		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/gim
-	console.log(emailReg.test(emailForm.value))
 
-	if (emailReg.test(emailForm.value) && msgForm.value !== '' && nameForm.value !== '') {
+	if (emailReg.test(email.value) && nameForm.value != '' && msgForm.value != '') {
 		removeError(email)
 		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
 		emailjs
@@ -36,8 +40,11 @@ const validateEmail = email => {
 			.catch(error => {
 				console.log('FAILED...', error)
 			})
-	} else if (!emailReg.test(emailForm.value)) {
+		emailValid = 1
+	} else if (email.value === '') showError(email, email.placeholder)
+	else {
 		showError(email, 'Email jest nieprawidłowy!')
+		emailValid = 0
 	}
 }
 
@@ -96,7 +103,7 @@ const checkErrors = () => {
 		}
 	})
 
-	if (errorCount === 0) {
+	if (errorCount === 0 && emailValid === 1) {
 		blockScroll.classList.add('block-scroll')
 		popup.classList.add('show-popup')
 		overlay.style.visibility = 'visible'
@@ -134,16 +141,13 @@ const checkForm = input => {
 	})
 }
 
-;(function () {
-	const publicKey = 'lgkz6CPgh6GbEuCoO'
-	emailjs.init(publicKey)
-})()
-
 window.onload = () => {
 	btnForm.addEventListener('click', e => {
 		e.preventDefault()
 		checkForm([msgForm, nameForm, emailForm])
+
 		validateEmail(emailForm)
+
 		checkErrors()
 	})
 }
@@ -161,8 +165,6 @@ const scrollSpy = link => {
 		})
 	}
 }
-
-const headerLinks = [headerBtn, headerArrowDown]
 
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))

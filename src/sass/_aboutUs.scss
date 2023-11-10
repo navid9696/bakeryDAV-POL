@@ -1,23 +1,14 @@
 
 
 .about-us {
-  background-color: #f1f1f1;
+  background-color: $background-color-light;
 
   &-title {
     @include title($secondary-color);
   }
 
   &-heading {
-    margin-bottom: 2em;
-    padding: 0.5em;
-    font-size: 1.6rem;
-    text-align: center;
-    letter-spacing: 0px;
-    color: #000;
-    font-weight: bolder;
-    text-shadow: 1px 1px #ffffff81;
-    border-radius: 8px;
-    border: 2px solid #000;
+    @include heading;
 
     &:last-of-type {
       margin-bottom: 4em;
@@ -31,9 +22,9 @@
     flex-direction: column;
 
     .about-us-description {
-      margin: 2em 0;
       min-width: min-content;
       max-width: 800px;
+      margin: 2em 0;
       text-align: center;
       color: #000;
       font-size: 1.4rem;
@@ -45,10 +36,10 @@
   }
 }
 .carousel {
-  margin: 2em 0;
   // aspect ratio 4:3
   width: 260px;
   height: 195px;
+  margin: 2em 0;
 
   .carousel-inner,
   .carousel-item,
@@ -67,15 +58,15 @@
   gap: 10px 100px;
 
   .about-us__card {
-    position: relative;
-    margin: 1em 0;
     height: 450px;
     min-width: 250px;
     max-width: 350px;
+    margin: 1em 0;
+    position: relative;
     color: #fff;
     border-radius: 8px;
     text-align: center;
-    perspective: 999px;
+    perspective: 2137px;
 
     &:hover {
       .about-us__card-img {
@@ -148,7 +139,7 @@
       background-image: radial-gradient(
         circle at top right,
         $secondary-color 0%,
-        $background-color 100%
+        $background-color-dark 100%
       );
       border-radius: 8px;
       opacity: 0;

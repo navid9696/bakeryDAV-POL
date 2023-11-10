@@ -1,4 +1,4 @@
-@import'./colors';
+@import './colors';
 @import './bootstrap';
 @import '../../node_modules/normalize-scss/sass/normalize';
 @import './reset';
@@ -27,14 +27,13 @@ html {
 body {
 	font-size: 1.6rem;
 	color: #fff;
-	background-color: $background-color;
+	background-color: $background-color-dark;
 	font-family: 'Open Sans', sans-serif;
 
 	&.block-scroll {
 		overflow: hidden;
 	}
 }
-
 
 .wrapper {
 	margin: 0 auto;

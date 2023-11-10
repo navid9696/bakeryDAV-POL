@@ -20,20 +20,50 @@
 }
 
 @mixin main-btn {
-    margin-top: 3em;
-    padding: 1em 1.5em;
-    background-color: $secondary-color;
-    color: #000;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 12px;
-    border: 2px solid #000;
-    transition: background-color 0.5s, color 0.5s, border 0.5s, border 0.5s;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: #1e1e1e;
-      border: 2px solid $secondary-color;
-      color: $secondary-color;
-    }
-  }
+	margin-top: 3em;
+	padding: 1em 1.5em;
+	background-color: $secondary-color;
+	color: #000;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 12px;
+	border: 2px solid #000;
+	transition: background-color 0.5s, color 0.5s, border 0.5s, border 0.5s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #1e1e1e;
+		border: 2px solid $secondary-color;
+		color: $secondary-color;
+	}
+}
+
+@mixin attribution($color: #fff) {
+	margin: 1em;
+	margin-bottom: 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: $color;
+	font-style: italic;
+	z-index: 1;
+
+	.attribution__link {
+		padding: 1em 0.1em;
+		color: $color;
+		text-decoration-color: #ff000f;
+	}
+}
+
+@mixin heading($color: #000, $borderColor: #000) {
+	margin-bottom: 2em;
+	padding: 0.5em;
+	font-size: 1.6rem;
+	text-align: center;
+	letter-spacing: 0px;
+	color: $color;
+	font-weight: bolder;
+	text-shadow: 1px 1px #ffffff81;
+	border-radius: 8px;
+	border: 2px solid $borderColor;
+}

@@ -13,8 +13,6 @@ const browserSync = require('browser-sync').create()
 const reload = browserSync.reload
 const plumber = require('gulp-plumber')
 
-
-
 const paths = {
 	html: './html/**/*.kit',
 	sass: './src/sass/**/*.scss',
@@ -90,6 +88,7 @@ function cleanStuff(done) {
 	src(paths.dist, { read: false }).pipe(clean())
 	done()
 }
+
 
 exports.cleanStuff = cleanStuff
 exports.default = series(

@@ -22,7 +22,7 @@
 	}
 
 	&__container {
-		height: calc(100dvh - 100px);
+		height: calc(100svh - 100px);
 		margin-top: 100px;
 		padding: 0 2em;
 		display: flex;
@@ -44,9 +44,9 @@
 
 	&__title {
 		font-size: 3.5rem;
+		font-family: 'Raleway', cursive;
 		letter-spacing: 1px;
 		word-spacing: 5px;
-		font-family: 'Raleway', cursive;
 		line-height: 1.2;
 		color: $secondary-color;
 
@@ -64,24 +64,11 @@
 	}
 
 	&__btn {
-		@include main-btn
+		@include main-btn;
 	}
 
 	&__attribution {
-		margin: 1em;
-		margin-bottom: 0;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		color: #fff;
-		font-style: italic;
-		z-index: 1;
-
-		.attribution__link {
-			padding: 1em 0.1em;
-			color: #fff;
-			text-decoration-color: #ff000f;
-		}
+		@include attribution;
 	}
 
 	&__arrow-link {
