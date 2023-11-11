@@ -152,12 +152,11 @@ window.onload = () => {
 	})
 }
 
-handleCurrentYear()
 
 const scrollSpy = link => {
 	const targetId = link.getAttribute('href').substring(1)
 	const targetElement = document.getElementById(targetId)
-
+	
 	if (targetElement) {
 		const targetPosition = targetElement.offsetTop - navbarHeight
 		window.scrollTo({
@@ -166,6 +165,7 @@ const scrollSpy = link => {
 	}
 }
 
+handleCurrentYear()
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
