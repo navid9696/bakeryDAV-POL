@@ -17,12 +17,13 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
-		opacity: 0.7;
+		opacity: 0.6;
 		z-index: -1;
 	}
 
 	&__container {
 		height: calc(100svh - 100px);
+		position: relative;
 		margin-top: 100px;
 		padding: 0 2em;
 		display: flex;
@@ -32,8 +33,12 @@
 	}
 
 	&__content {
-		margin-top: 1em;
+		height: calc(100% - 100px);
 		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-direction: column;
 		text-align: center;
 		z-index: 1;
 
@@ -56,7 +61,6 @@
 	}
 
 	&__description {
-		margin-top: 1em;
 		font-size: 2rem;
 		font-style: italic;
 		letter-spacing: 1px;
@@ -65,7 +69,6 @@
 
 	&__btn {
 		@include main-btn;
-		margin-top: 2.5em;
 	}
 
 	&__attribution {
@@ -73,7 +76,7 @@
 	}
 
 	&__arrow-link {
-		padding: 1.5em 2em 0;
+		padding: 0 2em;
 		position: absolute;
 		bottom: 0;
 		animation: bounce 3s 3s infinite both;

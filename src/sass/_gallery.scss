@@ -1,6 +1,8 @@
 .gallery {
 	background-color: #f1f1f1;
-
+	&__title {
+		@include title;
+	}
 	&-flex__container {
 		padding-left: 0;
 		display: flex;

@@ -22,13 +22,11 @@ const headerLinks = [headerBtn, headerArrowDown]
 overlay.style.visibility = 'hidden'
 
 emailjs.init('lgkz6CPgh6GbEuCoO')
-
 let emailValid = 0
 
 const validateEmail = email => {
 	const emailReg =
 		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/gim
-
 	if (emailReg.test(email.value) && nameForm.value != '' && msgForm.value != '') {
 		removeError(email)
 		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
@@ -152,11 +150,10 @@ window.onload = () => {
 	})
 }
 
-
 const scrollSpy = link => {
 	const targetId = link.getAttribute('href').substring(1)
 	const targetElement = document.getElementById(targetId)
-	
+
 	if (targetElement) {
 		const targetPosition = targetElement.offsetTop - navbarHeight
 		window.scrollTo({

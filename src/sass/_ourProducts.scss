@@ -1,6 +1,10 @@
-
 .our-products {
+	&__title {
+		@include title($secondary-color);
+	}
+
 	&__description {
+		margin: 1.5em 0;
 		font-size: 1.4rem;
 		word-wrap: break-word;
 		text-align: center;
