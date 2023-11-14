@@ -14,11 +14,6 @@
 @import './footer';
 @import './keyframes';
 
-html,
-body {
-	// height: 100%;
-}
-
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
@@ -28,11 +23,18 @@ body {
 	font-size: 1.6rem;
 	color: #fff;
 	background-color: $background-color-dark;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
 
 	&.block-scroll {
 		overflow: hidden;
 	}
+}
+main,
+.footer,
+.nav,
+.header {
+	overflow: hidden;
 }
 
 .wrapper {
@@ -44,5 +46,3 @@ body {
 .section-padding {
 	padding: 3em 2em;
 }
-
-

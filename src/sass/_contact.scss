@@ -1,6 +1,6 @@
 .contact {
 	position: relative;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
 		url(../../dist/img/various-buns-breakfast-small.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -12,118 +12,121 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+	}
 
-		.contact__info {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-around;
+	&__title {
+		@include title($secondary-color, 180px);
+	}
 
-			.icons {
-				width: 50px;
-				height: 50px;
-				margin: 1em 0;
-			}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 
-			.svg-icon {
-				transition: stroke 0.3s ease, fill 0.3s ease;
-			}
-
-			.contact-email {
-				margin-bottom: 2em;
-
-				&__link {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					text-decoration: none;
-
-					&:hover {
-						.svg-icon,
-						.contact-email__address {
-							stroke: #cccccc;
-							color: #cccccc;
-						}
-					}
-
-					.contact-email__address {
-						font-size: 1.4rem;
-						word-spacing: 0px;
-						color: #fff;
-						transition: color 0.3s ease;
-					}
-				}
-			}
-
-			.contact-phone {
-				margin-bottom: 2em;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-
-				&:hover {
-					.svg-icon,
-					.contact-phone__number {
-						fill: #cccccc;
-						color: #cccccc;
-					}
-				}
-
-				&__number {
-					margin-bottom: 0;
-					font-size: 1.8rem;
-					color: #ffffff;
-					transition: color 0.3s ease;
-				}
-			}
-
-			.contact-social-media {
-				padding: 1em;
-
-				&:hover .svg-icon {
-					fill: #cccccc;
-				}
-			}
+		.icons {
+			width: 50px;
+			height: 50px;
+			margin: 1em 0;
 		}
 
-		.contact__opening-hours {
+		.svg-icon {
+			transition: stroke 0.3s ease, fill 0.3s ease;
+		}
+	}
+
+	&__heading {
+		@include heading(#fff, #fff);
+	}
+
+	&__email {
+		margin-bottom: 2em;
+
+		.email__link {
 			display: flex;
-			justify-content: center;
-			align-items: center;
 			flex-direction: column;
-			list-style: none;
+			align-items: center;
+			text-decoration: none;
 
-			.opening-hours__text {
-				font-size: 1.8rem;
-				margin: 0.5em 0;
-				text-align: center;
-
-				.opening-hours__status {
-					font-weight: bold;
-					text-transform: uppercase;
+			&:hover {
+				.svg-icon,
+				.contact__email-address {
+					stroke: #cccccc;
+					color: #cccccc;
 				}
 			}
 		}
 	}
 
-	&-attribution {
-		position: absolute;
-		margin: 1em;
+	&__email-address {
+		font-size: 1.4rem;
+		color: #fff;
+		word-spacing: 0px;
+		transition: color 0.3s ease;
+	}
+
+	&__phone {
+		margin-bottom: 2em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&:hover {
+			.svg-icon,
+			.contact__phone-number {
+				fill: #cccccc;
+				color: #cccccc;
+			}
+		}
+	}
+
+	&__phone-number {
 		margin-bottom: 0;
-		right: 0;
-		bottom: 0;
-		font-style: italic;
+		font-size: 1.8rem;
+		color: #ffffff;
+		transition: color 0.3s ease;
+	}
 
-		&__link {
-			padding: 0.5em 0.1em;
-			color: #fff;
-			text-decoration-color: #ff000f;
+	&__social-media {
+		padding: 1em;
+
+		&:hover .svg-icon {
+			fill: #cccccc;
 		}
 	}
-}
 
-#gmp-map {
-	height: 300px;
-	width: 100%;
-	border-radius: 8px;
+	#gmp-map {
+		height: 300px;
+		width: 100%;
+		margin: 2em auto;
+		border-radius: 8px;
+	}
+
+	&__opening-hours {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		list-style: none;
+
+		.opening-hours__text {
+			margin: 0.5em 0;
+			text-align: center;
+			font-size: 1.6rem;
+
+			.opening-hours__status {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+
+		.opening-hours__text--annotation {
+			font-size: 1.4rem;
+			font-weight: lighter;
+		}
+	}
+
+	&__attribution {
+		@include attribution;
+	}
 }

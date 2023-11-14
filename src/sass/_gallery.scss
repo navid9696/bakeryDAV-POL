@@ -1,33 +1,33 @@
 .gallery {
 	background-color: #f1f1f1;
 	&__title {
-		@include title;
+		@include title($line-width:160px);
 	}
-	&-flex__container {
+	&__flex-container {
 		padding-left: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 20px;
+	}
 
-		.gallery__img-container {
-			height: 300px;
-			flex: 1 1 auto;
+	&__img-container {
+		height: 300px;
+		flex: 1 1 auto;
+	}
 
-			.gallery__photo {
-				height: 100%;
-				width: 100%;
-				vertical-align: middle;
-				object-fit: cover;
-				border: 1px solid #ccc;
-				border-radius: 6px;
-				box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
-				transition: scale 0.3s;
+	&__photo {
+		height: 100%;
+		width: 100%;
+		vertical-align: middle;
+		object-fit: cover;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
+		transition: scale 0.3s;
 
-				&:hover {
-					scale: 1.05;
-				}
-			}
+		&:hover {
+			scale: 1.05;
 		}
 	}
 }

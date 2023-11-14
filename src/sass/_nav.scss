@@ -3,10 +3,12 @@
 	width: 100%;
 	position: fixed;
 	top: 0;
+	right: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: $background-color-light;
+	overflow: hidden;
 	z-index: 1000;
 
 	&__logo,
@@ -56,7 +58,7 @@
 		position: fixed;
 		display: block;
 		transition: opacity 0.3s ease-in-out;
-		height: 200vh;
+		height: 190vh;
 		width: 100vw;
 		background-color: #000;
 		opacity: 0;

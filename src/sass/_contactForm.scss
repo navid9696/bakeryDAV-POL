@@ -1,13 +1,21 @@
-
 .form-section {
-	// position: relative;
 	background-color: $background-color-light;
 
-	.heading__text:not(:last-child) {
-		margin-bottom: 10px;
+	&__title {
+		@include title($line-width: 250px);
 	}
+
+	&__heading {
+		@include heading;
+
+		.heading__text:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
 	.contact-form {
-		padding: 2em;
+		padding: 1em;
+		margin-top: 2.5em;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -16,7 +24,7 @@
 		border-radius: 8px;
 
 		&__box {
-			margin: 0.3em 0;
+			margin: 0.3em auto;
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
@@ -30,11 +38,12 @@
 			color: #000;
 		}
 
-		&__inputs,
-		&__textarea {
+		&__inputs {
+			width: 200px;
 			padding: 0.5em;
 			border: 2px solid #000;
 			border-radius: 6px;
+			resize: vertical;
 
 			&::placeholder {
 				font-size: 1.2rem;
@@ -55,6 +64,7 @@
 			color: #000;
 			background-color: $secondary-color;
 			transition: background-color 0.5s, border 0.5s, color 0.5s;
+			cursor: pointer;
 
 			&:hover {
 				background-color: #1e1e1e;
@@ -93,12 +103,13 @@
 			background-color: #fff;
 			color: #000;
 			border-radius: 8px;
-			border: 2px solid #000;
+			border: 3px solid #000;
 			transition: top 0.5s;
-			z-index: 99999999;
+			z-index: 2137;
 
 			&-text {
 				margin-bottom: 1em;
+				font-weight: bold;
 			}
 		}
 

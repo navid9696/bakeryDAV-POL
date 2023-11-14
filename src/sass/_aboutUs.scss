@@ -2,7 +2,7 @@
 	background-color: $background-color-light;
 
 	&__title {
-		@include title($primary-color,$line-width:150px);
+		@include title($primary-color,130px);
 	}
 
 	&__heading {

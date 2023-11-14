@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
     <title>Piekarnia Brzęczek "DAV-POL"</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:ital,wght@1,500;1,700&family=Young+Serif&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:ital,wght@1,500;1,700&family=Roboto:wght@300;400;500&family=Young+Serif&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/main.min.css">
 </head>
 
@@ -46,7 +47,7 @@
     <div class="wrapper">
         <div class="header__container">
 
-            <div class="header__content slide-in-fwd-bottom">
+            <div class="header__content" data-aos="fade-down">
                 <h1 class="header__title">Piekarnia Ciastkarnia Brzęczek <span class="title__word">"DAV-POL"</span></h1>
                 <p class="header__description">Rodzinna piekarnia z wieloletnią tradycją</p>
                 <a class="header__btn-link" href="#aboutUs"><button class="header__btn">Poznaj Nas</button></a>
@@ -65,7 +66,7 @@
         <section id="aboutUs" class="about-us section-padding">
     <div class="wrapper">
 
-        <h2 class="about-us__title">O Nas</h2>
+        <h2 data-aos="zoom-in" class="about-us__title">O Nas</h2>
         <div class="about-us__our-story">
             <h3 class="about-us__heading">Nasza Historia</h3>
             <p class="about-us__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores numquam
@@ -174,28 +175,59 @@
 </section>
         <section id="products" class="our-products section-padding">
     <div class="wrapper">
-        <h2 class="our-products__title">Nasze Produkty</h2>
+        <h2 data-aos="zoom-in" class="our-products__title">Nasze Produkty</h2>
+        <div class="our-products__box-container">
 
-        <p class="our-products__description">Oferujemy różnorodne chleby i bułki, które wyróżniają się niezwykłym
-            aromatem dzięki wykorzystaniu naturalnego zakwasu. Nasz wybór bułek obejmuje zarówno tradycyjne wypieki
-            z mąki pszennej, jak i nietypowe, powstające z różnych rodzajów mąki. W naszej ofercie znajdziesz bułki
-            z dodatkami, takimi jak aromatyczne ziarna słonecznika czy delikatna cebula, nadającymi im wyjątkowy
-            charakter</p>
-            
-        <p class="our-products__description">Nasze chleby mieszane są kolejnym powodem, by odwiedzić naszą
-            piekarnię. Przygotowywane z połączenia mąki pszennej i żytniej, oferują nie tylko wyjątkowy smak, ale
-            także pożądaną konsystencję. W naszej ofercie znajdziesz również chleby na wagę, pozwalające dostosować
-            ilość do Twoich potrzeb.</p>
+            <div class="our-products__box our-products__box--first">
+                <img class="our-products__img-description" src="../dist/img/dough-943245_640-small.jpg" alt="">
+                <p class="our-products__description" data-aos="fade-right">Oferujemy różnorodne chleby i bułki, które
+                    wyróżniają się
+                    niezwykłym
+                    aromatem dzięki wykorzystaniu naturalnego zakwasu.</p>
+                <p class="our-products__description" data-aos="fade-left">Nasz wybór bułek obejmuje zarówno tradycyjne
+                    wypieki
+                    z mąki pszennej, jak i nietypowe, powstające z różnych rodzajów mąki.</p>
+                <p class="our-products__description" data-aos="fade-right">W naszej ofercie znajdziesz
+                    bułki
+                    z dodatkami, takimi jak aromatyczne ziarna słonecznika czy delikatna cebula, nadającymi im wyjątkowy
+                    charakter</p>
+            </div>
 
-        <p class="our-products__description"> Przykładamy dużą uwagę do jakości naszych produktów, unikając dodatków
-            chemicznych. Wierzymy, że natura
-            dostarcza wszystko, co potrzebne do wypiekania wyjątkowego, smacznego, zdrowego i autentycznego
-            pieczywa. Nasze wypieki są nie tylko smaczne, ale także zdrowe, pełne autentycznego smaku, którym
-            będziesz cieszyć się przy każdym kęsie</p>
+            <div class="our-products__box our-products__box--second">
+                <img class="our-products__img-description" src="../dist/img/bread-4183225_640-small.jpg" alt="">
+                <p class="our-products__description" data-aos="fade-right">Nasze chleby mieszane są kolejnym powodem, by
+                    odwiedzić naszą
+                    piekarnię.</p>
+                <p class="our-products__description" data-aos="fade-left">Przygotowywane z połączenia mąki pszennej i
+                    żytniej, oferują
+                    nie tylko wyjątkowy smak,
+                    ale
+                    także pożądaną konsystencję.</p>
+                <p class="our-products__description" data-aos="fade-right">W naszej ofercie znajdziesz
+                    również chleby na wagę, pozwalające
+                    dostosować
+                    ilość do Twoich potrzeb.</p>
+            </div>
+
+            <div class="our-products__box our-products__box--third">
+                <img class="our-products__img-description" src=".././dist/img/bread-2432090_640-small.jpg" alt="">
+                <p class="our-products__description" data-aos="fade-right"> Przykładamy dużą uwagę do jakości naszych
+                    produktów, unikając
+                    dodatków
+                    chemicznych.</p>
+                <p class="our-products__description" data-aos="fade-left">Wierzymy, że natura
+                    dostarcza wszystko, co potrzebne do wypiekania wyjątkowego, smacznego, zdrowego i autentycznego
+                    pieczywa.</p>
+                <p class="our-products__description" data-aos="fade-right">Nasze wypieki są nie tylko smaczne, ale także
+                    zdrowe,
+                    pełne autentycznego smaku, którym
+                    będziesz cieszyć się przy każdym kęsie</p>
+            </div>
+        </div>
 
         <div class="our-products__cards">
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -208,7 +240,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -221,7 +253,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -234,7 +266,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -247,7 +279,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -260,7 +292,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -273,7 +305,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -286,7 +318,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -299,7 +331,7 @@
                 </div>
             </div>
 
-            <div class="our-products__card">
+            <div data-aos="fade-up" class="our-products__card">
                 <div class="card__content">
                     <div class="our-products__img-container">
                         <img class="our-products__img"
@@ -324,39 +356,39 @@
 </section>
         <section id="gallery" class="gallery section-padding">
         <div class="wrapper">
-                <h2 class="gallery__title">Galeria</h2>
-                <ul class="gallery-flex__container">
-                        <li class="gallery__img-container"><img class="gallery__photo"
+                <h2 data-aos="zoom-in" class="gallery__title">Galeria</h2>
+                <ul class="gallery__flex-container">
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
                                         src="../dist/img/370063936_6480153338777059_2561016885055974530_n.jpg"
                                         alt="Sample photo"></li>
-                        <li class="gallery__img-container"> <img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"> <img class="gallery__photo"
                                         src="../dist/img/387472696_628504752699391_3647111443524929869_n.jpg"
                                         alt="Sample photo"></li>
-                        <li class="gallery__img-container"> <img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"> <img class="gallery__photo"
                                         src="../dist/img/387471916_2577865512362920_4462435419232931321_n.jpg"
                                         alt="Sample photo"></li>
-                        <li class="gallery__img-container"> <img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"> <img class="gallery__photo"
                                         src="../dist/img/393290265_345597004654379_6785661523862748045_n.jpg"
                                         alt="Sample photo"></li>
-                        <li class="gallery__img-container"> <img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"> <img class="gallery__photo"
                                         src="../dist/img/bread-white-big.jpg" alt="Sample photo"></li>
-                        <li class="gallery__img-container"><img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
                                         src="../dist/img/bread-white-small.jpg" alt="Sample photo"></li>
 
-                        <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/headerBGbig.jpg"
-                                        alt="Sample photo"></li>
-                        <li class="gallery__img-container"><img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
+                                        src="../dist/img/headerBGbig.jpg" alt="Sample photo"></li>
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
                                         src="../dist/img/headerBGsmall.jpg" alt="Sample photo">
                         </li>
-                        <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/logo.png"
-                                        alt="Sample photo">
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
+                                        src="../dist/img/logo.png" alt="Sample photo">
                         </li>
-                        <li class="gallery__img-container"><img class="gallery__photo" src="../dist/img/placeholder.jpg"
-                                        alt="Sample photo">
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
+                                        src="../dist/img/placeholder.jpg" alt="Sample photo">
                         </li>
-                        <li class="gallery__img-container"><img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
                                         src="../dist/img/icons/arrow-down.svg" alt="Sample photo"></li>
-                        <li class="gallery__img-container"><img class="gallery__photo"
+                        <li data-aos="zoom-out" class="gallery__img-container"><img class="gallery__photo"
                                         src="../dist/img/icons/click-svgrepo-com.svg" alt="Sample photo"></li>
                 </ul>
         </div>
@@ -364,37 +396,36 @@
         <section id="contact" class="contact section-padding">
     <div class="wrapper">
         <div class="contact__container">
-            <h2 class="contact__title title--light">Kontakt</h2>
+            <h2 data-aos="zoom-in" class="contact__title">Kontakt</h2>
 
             <div class="contact__info">
-                <h3 class="contact__heading heading">Masz pytanie? Skontaktuj się z nami!</h3>
+                <h3 class="contact__heading">Masz pytanie? Skontaktuj się z nami!</h3>
 
-                <div class="contact-email">
-                    <a class="contact-email__link " href="mailto:kontakt.piekarniabrzeczek@gmail.com"><svg
+                <div class="contact__email">
+                    <a class="email__link " href="mailto:kontakt.piekarniabrzeczek@gmail.com"><svg
                             class="contact-email__icon icons" width="64" height="64" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path class="svg-icon"
                                 d="M16 12a4 4 0 11-8 0 4 4 0 018 0zm0 0v1.5a2.5 2.5 0 002.5 2.5v0a2.5 2.5 0 002.5-2.5V12a9 9 0 10-9 9h4"
                                 stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <p class="contact-email__address">kontakt.piekarniabrzeczek@gmail.com</p>
+                        <p class="contact__email-address">kontakt.piekarniabrzeczek@gmail.com</p>
                     </a>
                 </div>
 
-                <div class="contact-phone">
-                    <div class="contact-phone__image "><svg class="contact-phone__icon icons" fill="#fff" height="64"
-                            width="64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.633 367.633" stroke="#fff">
+                <div class="contact__phone">
+                    <div class="phone__image "><svg class="phone__icon icons" fill="#fff" height="64" width="64"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.633 367.633" stroke="#fff">
                             <path class="svg-icon"
                                 d="M266.003 0H101.63C86.293 0 73.816 12.476 73.816 27.812v312.01c0 15.335 12.477 27.812 27.813 27.812h164.373c15.337 0 27.814-12.477 27.814-27.812V27.812C293.816 12.476 281.34 0 266.003 0zm-71.159 338.736a3.938 3.938 0 01-3.938 3.938h-14.18a3.938 3.938 0 01-3.938-3.938v-12.604a3.94 3.94 0 011.669-3.219l7.09-4.993a3.937 3.937 0 014.537 0l7.09 4.993a3.937 3.937 0 011.669 3.219v12.604zm65.888-38.22H106.9V42.299h153.832v258.217z" />
                         </svg></div>
-                    <p class="contact-phone__number">571 451 654</p>
+                    <p class="contact__phone-number">571 451 654</p>
                 </div>
 
-                <div class="contact-social-media">
-                    <a class="contact-social-media__link"
-                        href="https://www.facebook.com/profile.php?id=100070507284442">
-                        <svg class="contact-social-media__icon icons" width="64" height="64" viewBox="0 0 24 24"
-                            fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff" stroke-width="0">
+                <div class="contact__social-media">
+                    <a class="social-media__link" href="https://www.facebook.com/profile.php?id=100070507284442">
+                        <svg class="social-media__icon icons" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#fff" stroke-width="0">
                             <path class="svg-icon" fill-rule="evenodd" clip-rule="evenodd"
                                 d="M20 1a3 3 0 013 3v16a3 3 0 01-3 3H4a3 3 0 01-3-3V4a3 3 0 013-3h16zm0 2a1 1 0 011 1v16a1 1 0 01-1 1h-5v-7h2.076a1 1 0 00.949-.684l.443-1.329a.75.75 0 00-.712-.987H15V9c0-.5.5-1 1-1h2a1 1 0 001-1v-.686a.71.71 0 00-.519-.695C17.171 5.273 16 5.273 16 5.273c-2.5 0-4 1.727-4 3.227V11h-2a1 1 0 00-1 1v1a1 1 0 001 1h2v7H4a1 1 0 01-1-1V4a1 1 0 011-1h16z"
                                 fill="#fff" stroke="none" />
@@ -410,20 +441,21 @@
             </div>
 
             <div class="contact__opening-hours">
-                <h3 class="contact__heading heading">Godziny Otwarcia</h3>
+                <h3 class="contact__heading">Godziny Otwarcia</h3>
                 <p class="opening-hours__text">Poniedziałek - Sobota: 6:00 - 14:00</p>
                 <p class="opening-hours__text">Niedziela - <span class="opening-hours__status">nieczynne</span></p>
-                <small class="opening-hours__text">Godziny otwarcia mogą ulec zmianom w zależności od warunków
+                <small class="opening-hours__text opening-hours__text--annotation">Godziny otwarcia mogą ulec zmianom w
+                    zależności od warunków
                     pogodowych.</small>
             </div>
         </div>
     </div>
-    <small class="contact-attribution">Designed by <a class="contact-attribution__link"
+    <small class="contact__attribution">Designed by <a class="attribution__link"
             href="https://www.freepik.com/free-photo/bakery-still-life-with-handmade-bread_4468007.htm#query=bakery%20background&position=27&from_view=search&track=ais">Freepik</a></small>
 </section>
         <section class="form-section section-padding">
-    <h2 class="form-section__title title--dark">Formularz Kontaktowy</h2>
-    <h3 class="form-section__heading heading--dark">
+    <h2 data-aos="zoom-in" class="form-section__title">Formularz Kontaktowy</h2>
+    <h3 class="form-section__heading">
         <p class="heading__text">Masz pytanie?</p>
         <p class="heading__text">Chcesz podzielić się z nami swoimi spostrzeżeniami?</p>
         <p class="heading__text">Napisać opinię?</p>
@@ -433,24 +465,23 @@
     <form class="contact-form" id="contact-form">
         <input class="contact-form__inputs" type="hidden" name="contact_number">
 
-        <div class="contact-form__box">
+        <div data-aos="fade-left" class="contact-form__box">
             <label class="contact-form__labels" for="name">Imię</label>
             <input class="contact-form__inputs" id="name" type="text" name="user_name"
                 placeholder="Wprowadź swoje imię">
             <p class="contact-form__error-text">error</p>
         </div>
 
-        <div class="contact-form__box">
+        <div data-aos="fade-left" class="contact-form__box">
             <label class="contact-form__labels" for="email">E-mail</label>
             <input class="contact-form__inputs" id="email" type="email" name="user_email"
                 placeholder="Wprowadź swój e-mail">
             <p class="contact-form__error-text">error</p>
         </div>
 
-        <div class="contact-form__box">
+        <div data-aos="fade-left" class="contact-form__box">
             <label class="contact-form__labels" for="msg">Wiadomość</label>
-            <textarea class="contact-form__inputs" id="msg" placeholder="Wprowadź wiadomość"
-                name="message"></textarea>
+            <textarea class="contact-form__inputs" id="msg" placeholder="Wprowadź wiadomość" name="message"></textarea>
             <p class="contact-form__error-text">error</p>
         </div>
 
@@ -466,8 +497,13 @@
     <footer class="footer">
     <small class="footer__text">&copy<span class="footer__year"></span> KRYSTIAN BRZĘCZEK "DAV-POL" F.P.H.U.</small>
 </footer>
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            startEvent: 'DOMContentLoaded',
+            duration: 500
+        });
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzSIsd_7PfaI2rQhoXSF34BO_w_scGtxo&callback=initMap&libraries=&v=weekly"
