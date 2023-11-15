@@ -2,7 +2,7 @@
 	background-color: $background-color-light;
 
 	&__title {
-		@include title($primary-color,130px);
+		@include title($primary-color, 130px);
 	}
 
 	&__heading {
@@ -92,18 +92,18 @@
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: linear-gradient(45deg, #bf6a25ae, #000000d2),
-					url(../../dist/img/387471916_2577865512362920_4462435419232931321_n.jpg);
+				background-image: linear-gradient(45deg, #bf6a2571, #000000a9),
+					url(../../dist/img/sourdough.jpg);
 			}
 
 			&--second {
-				background-image: linear-gradient(45deg, #ff8d2fae, #000000d2),
-					url(../../dist/img/387472696_628504752699391_3647111443524929869_n.jpg);
+				background-image: linear-gradient(45deg, #ff8d2f7e, #000000aa),
+					url(../../dist/img/dough.jpg);
 			}
 
 			&--third {
-				background-image: linear-gradient(45deg, #ffa963ae, #000000d2),
-					url(../../dist/img/393290265_345597004654379_6785661523862748045_n.jpg);
+				background-image: linear-gradient(45deg, #ffa15576, #000000ba),
+					url(../../dist/img/wheat.jpg);
 			}
 
 			.card-img__title {
@@ -127,6 +127,7 @@
 				color: #fff;
 				fill: #ff0000;
 			}
+
 		}
 
 		&-info {
@@ -157,9 +158,9 @@
 			}
 
 			.card-info__description {
-				padding-top: 3em;
+				padding-top: 3.5em;
 				margin: 0 auto;
-				width: 75%;
+				width: 100%;
 			}
 		}
 	}

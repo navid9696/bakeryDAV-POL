@@ -41,17 +41,21 @@
 		}
 	}
 
-	&__img-description {
+	&__box-img {
 		width: 100%;
-		transition: scale 0.5s;
-
+		transform-origin: bottom;
+		transition: scale 0.5s, filter 0.5s;
+		filter: brightness(50%);
+		filter: grayscale(100%);
 		&:hover {
-			scale: 1.1;
+			filter: brightness(100%);
+			filter: grayscale(0%);
+			scale: 1.15;
 		}
 	}
 
 	&__cards {
-		margin: 3em 0;
+		margin-top: 6em;
 		display: flex;
 		justify-content: center;
 		align-items: center;

@@ -1,0 +1,36 @@
+@media (min-width: 640px) {
+	// _nav
+
+	.nav__list {
+		width: 55%;
+	}
+
+	.nav__item {
+		margin: 0.5em auto;
+		font-size: 2.6rem;
+	}
+
+	// _header
+
+	.header__title {
+		font-size: 4.6rem;
+	}
+
+	.header__description {
+		font-size: 2.6rem;
+	}
+
+	.header__btn {
+		padding: 1.1em 1.6em;
+		font-size: 1.8rem;
+	}
+
+	.header__attribution {
+		font-size: 1.2rem;
+	}
+
+	.arrow-link__img {
+		height: 100px;
+		width: 100px;
+	}
+}
