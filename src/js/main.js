@@ -40,7 +40,7 @@ const validateEmail = email => {
 			})
 		emailValid = 1
 	} else if (email.value === '') showError(email, email.placeholder)
-	else if (emailReg.test(email.value) & ((nameForm.value != '') || msgForm.value != '')) removeError(email)
+	else if (emailReg.test(email.value) & (nameForm.value != '' || msgForm.value != '')) removeError(email)
 	else if (emailReg.test(email.value) === false) {
 		showError(email, 'Email jest nieprawidłowy!')
 		emailValid = 0
