@@ -15,7 +15,7 @@
 	}
 
 	&__title {
-		@include title($secondary-color, 180px);
+		@include title($secondary-color);
 	}
 
 	&__info {
@@ -61,7 +61,6 @@
 	&__email-address {
 		font-size: 1.4rem;
 		color: #fff;
-		word-spacing: 0px;
 		transition: color 0.3s ease;
 	}
 
@@ -121,15 +120,15 @@
 			text-align: center;
 			font-size: 1.6rem;
 
+			&--annotation {
+				font-size: 1.4rem;
+				font-weight: lighter;
+			}
+
 			.opening-hours__status {
 				font-weight: bold;
 				text-transform: uppercase;
 			}
-		}
-
-		.opening-hours__text--annotation {
-			font-size: 1.4rem;
-			font-weight: lighter;
 		}
 	}
 

@@ -9,7 +9,7 @@
 	}
 
 	&__title {
-		@include title($line-width: 250px);
+		@include title;
 	}
 
 	&__heading {
@@ -23,7 +23,7 @@
 	.contact-form {
 		width: 100%;
 		max-width: 405px;
-		padding: 1em;
+		padding: 2em;
 		margin-top: 2.5em;
 		display: flex;
 		justify-content: center;
@@ -33,22 +33,24 @@
 		border-radius: 8px;
 
 		&__box {
+			width: 100%;
 			margin: 0.3em auto;
 			display: flex;
 			justify-content: center;
-			align-items: flex-start;
+			align-items: center;
 			flex-direction: column;
 		}
 
 		&__labels {
 			margin-bottom: 0.5em;
+			align-self: flex-start;
 			font-size: 2rem;
 			font-weight: bold;
 			color: #000;
 		}
 
 		&__inputs {
-			width: 200px;
+			width: 100%;
 			padding: 0.5em;
 			border: 2px solid #000;
 			border-radius: 6px;
@@ -89,6 +91,7 @@
 
 		&__error-text {
 			margin: 0.2em 0 0 0.4em;
+			align-self: flex-start;
 			font-size: 1rem;
 			font-weight: lighter;
 			color: rgb(184, 0, 0);
@@ -106,7 +109,7 @@
 			align-items: center;
 			flex-direction: column;
 			position: fixed;
-			top: -150px;
+			top: -250px;
 			width: 300px;
 			height: 150px;
 			background-color: #fff;

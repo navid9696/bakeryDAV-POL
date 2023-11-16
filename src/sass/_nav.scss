@@ -53,7 +53,7 @@
 			}
 		}
 	}
-	
+
 	.overlay {
 		position: fixed;
 		display: block;
@@ -94,8 +94,8 @@
 	}
 
 	&__item {
-		margin: 0 auto;
-		padding: 0.8em 1em;
+		margin: 0.2em auto;
+		padding: 0.8em 1em .5em;
 		position: relative;
 		display: block;
 		text-align: center;

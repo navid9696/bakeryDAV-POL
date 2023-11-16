@@ -1,37 +1,421 @@
-@media (min-width: 640px) {
-    
+@media (min-width: 576px) {
 	// _nav
 
-	.nav__list {
-		width: 55%;
-	}
+	.nav {
+		&__list {
+			width: 55%;
+		}
 
-	.nav__item {
-		margin: 0.5em auto;
-		font-size: 2.6rem;
+		&__item {
+			margin: 0.5em auto;
+			font-size: 2.6rem;
+		}
 	}
 
 	// _header
 
-	.header__title {
-		font-size: 4.6rem;
+	.header {
+		&__title {
+			font-size: 4.6rem;
+		}
+
+		&__description {
+			font-size: 2.6rem;
+		}
+
+		&__btn {
+			font-size: 1.9rem;
+		}
+
+		&__attribution {
+			font-size: 1.2rem;
+		}
+
+		& .arrow-link__img {
+			height: 100px;
+			width: 100px;
+		}
 	}
 
-	.header__description {
-		font-size: 2.6rem;
+	// _aboutUs
+
+	.about-us {
+		&__description {
+			font-size: 1.5rem;
+		}
+
+		& .carousel {
+			width: 400px;
+			height: 300px;
+
+			& .carousel-control-next-icon,
+			& .carousel-control-prev-icon {
+				height: 50px;
+				width: 50px;
+			}
+		}
+
+		& .card-info__description {
+			font-size: 1.8rem;
+		}
 	}
 
-	.header__btn {
-		padding: 1.1em 1.6em;
-		font-size: 1.8rem;
+	// _ourProducts
+
+	.our-products {
+		&__box {
+			width: 75%;
+		}
+
+		&__description {
+			font-size: 1.6rem;
+		}
 	}
 
-	.header__attribution {
-		font-size: 1.2rem;
+	// _contact
+
+	.contact {
+		&__email-address {
+			font-size: 1.8rem;
+		}
+
+		& .gmp-map {
+			height: 460px;
+			width: 400px;
+		}
+
+		& .opening-hours__text {
+			font-size: 1.7rem;
+
+			&--annotation {
+				font-size: 1.5rem;
+			}
+		}
 	}
 
-	.arrow-link__img {
-		height: 100px;
-		width: 100px;
+	// _contactForm
+
+	.form-section {
+		.contact-form {
+			&__labels {
+				font-size: 2.2rem;
+			}
+
+			&__input-btn,
+			&__popup-close {
+				font-size: 1.9rem;
+			}
+
+			&__popup {
+				width: fit-content;
+				height: fit-content;
+				padding: 1.5em;
+				&-text {
+					margin-bottom: 1.5em;
+					font-size: 1.8rem;
+				}
+			}
+		}
+	}
+
+	// _footer
+
+	.footer__text {
+		font-size: 1.5rem;
 	}
 }
+
+@media (min-width: 768px) {
+	// _nav
+
+	.nav {
+		.hamburger {
+			right: 2em;
+
+			.hamburger-box {
+				width: 60px;
+			}
+
+			.hamburger-inner,
+			.hamburger-inner::before,
+			.hamburger-inner::after {
+				width: 60px;
+				height: 5px;
+			}
+		}
+
+		&__logo {
+			left: 2em;
+		}
+
+		&__list {
+			width: 45%;
+		}
+
+		&__item {
+			font-size: 2.8rem;
+		}
+	}
+
+	// _header
+
+	// _aboutUs
+
+	.about-us {
+		& .carousel {
+			width: 560px;
+			height: 420px;
+		}
+	}
+
+	// _ourProducts
+
+	.our-products {
+		&__box {
+			width: 100%;
+			display: flex;
+		}
+
+		&__description {
+			font-size: 1.5rem;
+		}
+
+		&__description-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 50%;
+		}
+
+		&__box-img {
+			width: 50%;
+			height: auto;
+			transform-origin: right;
+
+			&--right {
+				transform-origin: left;
+				order: 1;
+			}
+		}
+	}
+
+	// _contact
+
+	.contact {
+		& .gmp-map {
+			height: 440px;
+			width: 520px;
+		}
+	}
+
+	// _contactForm
+
+	// _footer
+}
+
+@media (min-width: 1024px) {
+	// _nav
+
+	.nav {
+		&__logo {
+			left: 1em;
+		}
+
+		.hamburger {
+			display: none;
+		}
+
+		&__list {
+			position: relative;
+			height: 100px;
+			width: 100%;
+			margin-left: calc(1em + 150px);
+			top: 0;
+			flex-direction: row;
+			transform: translateX(0%);
+			background: none;
+		}
+
+		&__item {
+			margin: 0 0.2em;
+			padding: 0.5em;
+			color: $background-color-dark;
+
+			&:hover {
+				color: $primary-color;
+			}
+
+			&::after {
+				background-color: $primary-color;
+			}
+		}
+	}
+
+	// _header
+
+	// _aboutUs
+
+	.about-us {
+		&__title {
+			font-size: 4.5rem;
+		}
+
+		&__heading {
+			padding: 0.8em;
+			font-size: 1.8rem;
+		}
+
+		&__description {
+			font-size: 1.6rem;
+		}
+
+		&__card {
+			.card-img__title {
+				font-size: 2.8rem;
+			}
+
+			.card-info__title {
+				font-size: 2.8rem;
+			}
+		}
+	}
+
+	// _ourProducts
+
+	.our-products {
+		&__title {
+			font-size: 4.5rem;
+		}
+
+		&__heading {
+			padding: 0.8em;
+			font-size: 1.8rem;
+		}
+
+		&__box {
+			margin: 3em auto;
+			height: 300px;
+		}
+
+		&__description {
+			width: 75%;
+			font-size: 1.5rem;
+		}
+	}
+
+	// _gallery
+
+	.gallery__title {
+		font-size: 4.3rem;
+	}
+
+	// _contact
+
+	.contact {
+		&__title {
+			font-size: 4.5rem;
+		}
+
+		&__heading {
+			padding: 0.8em;
+			font-size: 1.8rem;
+		}
+
+		.icons {
+			width: 75px;
+			height: 75px;
+		}
+
+		&__email-address {
+			font-size: 2.2rem;
+		}
+
+		&__phone-number {
+			font-size: 2.2rem;
+		}
+
+		& .gmp-map {
+			height: 400px;
+			width: 580px;
+		}
+
+		& .opening-hours__text {
+			font-size: 1.9rem;
+
+			&--annotation {
+				font-size: 1.7rem;
+			}
+		}
+	}
+
+	// _contactForm
+
+	.form-section {
+		&__title {
+			font-size: 4.5rem;
+		}
+
+		&__heading {
+			padding: 0.8em;
+			font-size: 1.8rem;
+		}
+
+		.contact-form {
+			width: 100%;
+			max-width: none;
+			padding: 2.5em;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 30px;
+
+			&__box {
+				margin: 0;
+				&:nth-child(2) {
+					grid-column: 1/4;
+					grid-row: 1/2;
+				}
+
+				&:nth-child(3) {
+					grid-column: 4/7;
+					grid-row: 1/2;
+				}
+
+				&:nth-child(4) {
+					grid-column: 1/-1;
+					grid-row: 2/3;
+				}
+
+				&__inputs-btn {
+					grid-row: 3/4;
+				}
+
+				&:last-child {
+					grid-column: 2/4;
+				}
+			}
+
+			&__labels {
+				font-size: 2.4rem;
+			}
+
+			&__inputs {
+				padding: 0.7em;
+				font-size: 2rem;
+
+				&::placeholder {
+					font-size: 1.6rem;
+				}
+			}
+
+			&__input-btn,
+			&__popup-close {
+				font-size: 2.4rem;
+			}
+
+			&__error-text {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+// _footer

@@ -1,7 +1,7 @@
 .gallery {
 	background-color: #f1f1f1;
 	&__title {
-		@include title($line-width:160px);
+		@include title;
 	}
 	&__flex-container {
 		padding-left: 0;
@@ -19,7 +19,6 @@
 	&__photo {
 		height: 100%;
 		width: 100%;
-		vertical-align: middle;
 		object-fit: cover;
 		border: 1px solid #ccc;
 		border-radius: 6px;

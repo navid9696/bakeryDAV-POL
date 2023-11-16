@@ -1,5 +1,6 @@
-@mixin title($color: $primary-color, $line-width: 200px) {
-	margin-bottom: 1em;
+@mixin title($color: $primary-color) {
+	width: fit-content;
+	margin: 0 auto 1em;
 	position: relative;
 	text-align: center;
 	font-size: 4rem;
@@ -10,7 +11,7 @@
 	&::after {
 		content: '';
 		height: 3px;
-		width: $line-width;
+		width: 100%;
 		margin: 0 auto;
 		position: absolute;
 		bottom: 0;
@@ -65,7 +66,7 @@
 	letter-spacing: 0px;
 	font-weight: bolder;
 	color: $color;
-	text-shadow: 1px 1px #ffffff81;
+	text-shadow: 1px 1px #ffffff5d;
 	border: 2px solid $border-color;
 	border-radius: 8px;
 }
