@@ -10,8 +10,8 @@ const nameForm = document.querySelector('#name')
 const emailForm = document.querySelector('#email')
 const msgForm = document.querySelector('#msg')
 const btnForm = document.querySelector('.contact-form__input-btn')
-const popup = document.querySelector('.contact-form__popup')
-const popupBtn = document.querySelector('.contact-form__popup-close')
+const popup = document.querySelector('.form-section__popup')
+const popupBtn = document.querySelector('.form-section__popup-close')
 const sections = document.querySelectorAll('section')
 const firstFourSections = Array.from(sections).slice(0, 4)
 const navbarHeight = navBar.clientHeight
@@ -163,14 +163,45 @@ const scrollSpy = link => {
 	}
 }
 
+const options = {
+	root: null,
+	rootMargin: '-100px 0px 0px 0px',
+	threshold: 0.5 // Próg widoczności sekcji w stosunku do viewportu
+  };
+  
+  const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+	  const id = entry.target.getAttribute('id');
+	  const correspondingLink = document.querySelector(`a[href="#${id}"]`);
+  
+	  if (entry.isIntersecting) {
+		correspondingLink.style.color = 'blue';
+	  } else {
+		correspondingLink.style.color = ''; // Przywrócenie domyślnego koloru
+	  }
+	});
+  }, options);
+  
+  // Pobierz sekcje i zarejestruj je w obserwatorze
+ 
+  
+  firstFourSections.forEach(section => {
+	observer.observe(section);
+  });
+
 handleCurrentYear()
 navBtn.addEventListener('click', handleNav)
-window.addEventListener('click', e => (e.target === overlay ? closeOverlay() : false))
+window.addEventListener('click', e =>
+	e.target === overlay && !popup.classList.contains('show-popup') ? closeOverlay() : false
+)
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
-		closeOverlay()
+		if (navBtn.classList.contains('is-active')) {
+			closeOverlay()
+		}
+
 		scrollSpy(link)
 	})
 })

@@ -96,24 +96,27 @@
 	// _contactForm
 
 	.form-section {
+		&__popup-close {
+			font-size: 1.9rem;
+		}
+
+		&__popup {
+			width: fit-content;
+			height: fit-content;
+			padding: 1.5em;
+			&-text {
+				margin-bottom: 1.5em;
+				font-size: 1.8rem;
+			}
+		}
+
 		.contact-form {
 			&__labels {
 				font-size: 2.2rem;
 			}
 
-			&__input-btn,
-			&__popup-close {
+			&__input-btn {
 				font-size: 1.9rem;
-			}
-
-			&__popup {
-				width: fit-content;
-				height: fit-content;
-				padding: 1.5em;
-				&-text {
-					margin-bottom: 1.5em;
-					font-size: 1.8rem;
-				}
 			}
 		}
 	}
@@ -234,6 +237,7 @@
 			flex-direction: row;
 			transform: translateX(0%);
 			background: none;
+			z-index: 10;
 		}
 
 		&__item {
@@ -360,6 +364,7 @@
 			font-size: 1.8rem;
 		}
 
+
 		.contact-form {
 			width: 100%;
 			max-width: none;
@@ -368,8 +373,13 @@
 			grid-template-columns: repeat(6, 1fr);
 			gap: 30px;
 
+			&__input-btn {
+				grid-row: 3/4;
+			}
+
 			&__box {
 				margin: 0;
+
 				&:nth-child(2) {
 					grid-column: 1/4;
 					grid-row: 1/2;
@@ -383,14 +393,6 @@
 				&:nth-child(4) {
 					grid-column: 1/-1;
 					grid-row: 2/3;
-				}
-
-				&__inputs-btn {
-					grid-row: 3/4;
-				}
-
-				&:last-child {
-					grid-column: 2/4;
 				}
 			}
 
@@ -407,9 +409,8 @@
 				}
 			}
 
-			&__input-btn,
-			&__popup-close {
-				font-size: 2.4rem;
+			&__input-btn {
+				font-size: 1.9rem;
 			}
 
 			&__error-text {
