@@ -8,10 +8,15 @@
 	background-attachment: fixed;
 
 	&__container {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+
+		.contact__attribution {
+			@include attribution;
+		}
 	}
 
 	&__title {
@@ -121,6 +126,7 @@
 			font-size: 1.6rem;
 
 			&--annotation {
+				margin-bottom: 3em;
 				font-size: 1.4rem;
 				font-weight: lighter;
 			}

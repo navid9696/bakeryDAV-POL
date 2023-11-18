@@ -10,14 +10,18 @@ const nameForm = document.querySelector('#name')
 const emailForm = document.querySelector('#email')
 const msgForm = document.querySelector('#msg')
 const btnForm = document.querySelector('.contact-form__input-btn')
-const popup = document.querySelector('.form-section__popup')
-const popupBtn = document.querySelector('.form-section__popup-close')
+const popup = document.querySelector('.form__popup')
+const popupBtn = document.querySelector('.form__popup-close')
 const sections = document.querySelectorAll('section')
-const firstFourSections = Array.from(sections).slice(0, 4)
+const header = document.querySelector('header')
 const navbarHeight = navBar.clientHeight
 const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
 const headerLinks = [headerBtn, headerArrowDown]
+const viewportHeight = window.innerHeight
+const rootMarginCorrecting = 110
+const rootMarginBottom = `${-(viewportHeight - rootMarginCorrecting)}px`
+const sectionsAndHeader = [header, ...sections]
 
 overlay.style.visibility = 'hidden'
 
@@ -151,7 +155,7 @@ window.onload = () => {
 	})
 }
 
-const scrollSpy = link => {
+const alingmentToNavBar = link => {
 	const targetId = link.getAttribute('href').substring(1)
 	const targetElement = document.getElementById(targetId)
 
@@ -162,32 +166,6 @@ const scrollSpy = link => {
 		})
 	}
 }
-
-const options = {
-	root: null,
-	rootMargin: '-100px 0px -10% 0px',
-	threshold: 0 // Próg widoczności sekcji w stosunku do viewportu
-  };
-  
-  const observer = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-	  const id = entry.target.getAttribute('id');
-	  const correspondingLink = document.querySelector(`a[href="#${id}"]`);
-  
-	  if (entry.isIntersecting) {
-		correspondingLink.style.color = 'blue';
-	  } else {
-		correspondingLink.style.color = ''; // Przywrócenie domyślnego koloru
-	  }
-	});
-  }, options);
-  
-  // Pobierz sekcje i zarejestruj je w obserwatorze
- 
-  
-  firstFourSections.forEach(section => {
-	observer.observe(section);
-  });
 
 handleCurrentYear()
 navBtn.addEventListener('click', handleNav)
@@ -202,12 +180,40 @@ links.forEach(link => {
 			closeOverlay()
 		}
 
-		scrollSpy(link)
+		alingmentToNavBar(link)
 	})
 })
 headerLinks.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
-		scrollSpy(link)
+		alingmentToNavBar(link)
 	})
+})
+
+const options = {
+	root: null,
+	rootMargin: `-110px 0px ${rootMarginBottom} 0px`,
+	threshold: 0,
+}
+
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		const id = entry.target.getAttribute('id')
+		const correspondingLink = document.querySelector(`a[href="#${id}"]`)
+		const hamburgerStyle = window.getComputedStyle(document.querySelector('.hamburger'))
+
+		if (entry.isIntersecting) {
+			if (hamburgerStyle.getPropertyValue('display') === 'none') {
+				correspondingLink.style.color = '#604a34'
+			} else {
+				correspondingLink.style.color = '#ffa963'
+			}
+		} else {
+			correspondingLink.style.color = ''
+		}
+	})
+}, options)
+
+sectionsAndHeader.forEach(section => {
+	observer.observe(section)
 })
