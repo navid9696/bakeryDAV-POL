@@ -165,8 +165,8 @@ const scrollSpy = link => {
 
 const options = {
 	root: null,
-	rootMargin: '-100px 0px 0px 0px',
-	threshold: 0.5 // Próg widoczności sekcji w stosunku do viewportu
+	rootMargin: '-100px 0px -10% 0px',
+	threshold: 0 // Próg widoczności sekcji w stosunku do viewportu
   };
   
   const observer = new IntersectionObserver(entries => {
