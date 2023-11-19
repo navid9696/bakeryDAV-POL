@@ -17,15 +17,15 @@ const header = document.querySelector('header')
 const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
 
-const scrollThreshold = 200
-const navbarHeight = navBar.clientHeight
 const headerLinks = [headerBtn, headerArrowDown]
+const sectionsAndHeader = [header, ...sections]
+const navbarHeight = navBar.clientHeight
 const viewportHeight = window.innerHeight
+const scrollThreshold = 200
 const rootMarginBottomCorrection = 110
 const rootMarginTopCorrection = 10
 const rootMarginBottom = `${-(viewportHeight - rootMarginBottomCorrection)}px`
-const rootMarginTop = `${-(navbarHeight - rootMarginTopCorrection)}px`
-const sectionsAndHeader = [header, ...sections]
+const rootMarginTop = `${-(navbarHeight + rootMarginTopCorrection)}px`
 
 overlay.style.visibility = 'hidden'
 
@@ -180,6 +180,7 @@ navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e =>
 	e.target === overlay && !popup.classList.contains('show-popup') ? closeOverlay() : false
 )
+
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
 	link.addEventListener('click', e => {
@@ -189,6 +190,7 @@ links.forEach(link => {
 		alingmentToNavBar(link)
 	})
 })
+
 headerLinks.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
@@ -207,12 +209,15 @@ const observer = new IntersectionObserver(entries => {
 		const id = entry.target.getAttribute('id')
 		const correspondingLink = document.querySelector(`a[href="#${id}"]`)
 		const hamburgerStyle = window.getComputedStyle(document.querySelector('.hamburger'))
+		const svgNavIcon = document.querySelector('.svg-icon')
 
 		if (entry.isIntersecting) {
 			if (hamburgerStyle.getPropertyValue('display') === 'none') {
 				correspondingLink.style.color = '#604a34'
+				id === 'header' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000')
 			} else {
 				correspondingLink.style.color = '#ffa963'
+				id === 'header' ? svgNavIcon.setAttribute('fill', '#ffa963') : svgNavIcon.setAttribute('fill', '#000')
 			}
 		} else {
 			correspondingLink.style.color = ''

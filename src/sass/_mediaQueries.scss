@@ -91,32 +91,31 @@
 				font-size: 1.5rem;
 			}
 		}
-	}
 
-	// _contactForm
-
-	.form {
-		&__popup-close {
-			font-size: 1.9rem;
-		}
-
-		&__popup {
-			width: fit-content;
-			height: fit-content;
-			padding: 1.5em;
-			&-text {
-				margin-bottom: 1.5em;
-				font-size: 1.8rem;
-			}
-		}
-
-		.contact-form {
-			&__labels {
-				font-size: 2.2rem;
-			}
-
-			&__input-btn {
+		.form {
+			&__popup-close {
 				font-size: 1.9rem;
+			}
+
+			&__popup {
+				width: fit-content;
+				height: fit-content;
+				padding: 1.5em;
+				&-text {
+					margin-bottom: 1.5em;
+					font-size: 1.8rem;
+				}
+			}
+
+			.contact-form {
+				&__labels {
+					font-size: 2.2rem;
+				}
+
+				&__input-btn {
+					padding: 0.8em 3em;
+					font-size: 1.9rem;
+				}
 			}
 		}
 	}
@@ -211,8 +210,6 @@
 		}
 	}
 
-	// _contactForm
-
 	// _footer
 }
 
@@ -229,24 +226,32 @@
 		}
 
 		&__list {
-			position: relative;
 			height: 100px;
 			width: 100%;
 			margin-left: calc(1em + 150px);
+			position: relative;
 			top: 0;
 			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
 			transform: translateX(0%);
 			background: none;
 			z-index: 10;
 		}
 
 		&__item {
-			margin: 0 0.2em;
-			padding: 0.5em;
-			color: $background-color-dark;
+			margin: 0 0.2em 0.5em;
+			padding: 0.5em 0.5em 0.1em;
+			font-size: 3rem;
+			white-space: nowrap;
+			color: #000;
 
 			&:hover {
 				color: $primary-color;
+			}
+
+			&:hover .svg-icon {
+				fill: $primary-color;
 			}
 
 			&::after {
@@ -350,73 +355,189 @@
 				font-size: 1.7rem;
 			}
 		}
-	}
 
-	// _contactForm
-
-	.form {
-		&__title {
-			font-size: 4.5rem;
-		}
-
-		&__heading {
-			padding: 0.8em;
-			font-size: 1.8rem;
-		}
-
-
-		.contact-form {
-			width: 100%;
-			max-width: none;
-			padding: 2.5em;
-			display: grid;
-			grid-template-columns: repeat(6, 1fr);
-			gap: 30px;
-
-			&__input-btn {
-				grid-row: 3/4;
+		.form {
+			&__title {
+				font-size: 4.5rem;
 			}
 
-			&__box {
-				margin: 0;
+			&__heading {
+				padding: 0.8em;
+				font-size: 1.8rem;
+			}
 
-				&:nth-child(2) {
-					grid-column: 1/4;
-					grid-row: 1/2;
+			.contact-form {
+				width: 100%;
+				max-width: none;
+				padding: 2.5em;
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				gap: 30px;
+
+				&__input-btn {
+					padding: 0.7em 4em;
+					grid-row: 3/4;
 				}
 
-				&:nth-child(3) {
-					grid-column: 4/7;
-					grid-row: 1/2;
+				&__box {
+					margin: 0;
+
+					&:nth-child(2) {
+						grid-column: 1/4;
+						grid-row: 1/2;
+					}
+
+					&:nth-child(3) {
+						grid-column: 4/7;
+						grid-row: 1/2;
+					}
+
+					&:nth-child(4) {
+						grid-column: 1/-1;
+						grid-row: 2/3;
+					}
 				}
 
-				&:nth-child(4) {
-					grid-column: 1/-1;
-					grid-row: 2/3;
+				&__labels {
+					font-size: 2.4rem;
 				}
-			}
 
-			&__labels {
-				font-size: 2.4rem;
-			}
+				&__inputs {
+					padding: 0.7em;
+					font-size: 2rem;
 
-			&__inputs {
-				padding: 0.7em;
-				font-size: 2rem;
-
-				&::placeholder {
-					font-size: 1.6rem;
+					&::placeholder {
+						font-size: 1.6rem;
+					}
 				}
-			}
 
-			&__input-btn {
-				font-size: 1.9rem;
-			}
-
-			&__error-text {
-				font-size: 1.4rem;
+				&__error-text {
+					font-size: 1.4rem;
+				}
 			}
 		}
 	}
 }
+
 // _footer
+
+@media (min-width: 1280px) {
+	// _nav
+
+	.nav {
+		&__list {
+			padding-left: 5em;
+			padding-right: 10em;
+		}
+
+		&__item {
+			margin: 0 0 0.5em 0;
+			font-size: 3.6rem;
+		}
+	}
+
+	// _header
+
+	.header {
+		&::after {
+			background-image: url(../img/headerBGbig.jpg);
+		}
+		&__title {
+			font-size: 6rem;
+			word-spacing: 10px;
+			letter-spacing: 2px;
+		}
+
+		&__description {
+			font-size: 2.8rem;
+			letter-spacing: 2px;
+			word-spacing: 5px;
+		}
+
+		&__btn {
+			font-size: 2.1rem;
+			letter-spacing: 1px;
+			word-spacing: 5px;
+		}
+	}
+
+	// _aboutUs
+
+	.about-us {
+		&__title {
+			font-size: 5rem;
+		}
+
+		&__heading {
+			font-size: 1.9rem;
+		}
+
+		&__description {
+			font-size: 1.7rem;
+		}
+	}
+
+	// _ourProducts
+
+	.our-products {
+		&__title {
+			font-size: 5rem;
+		}
+
+		&__heading {
+			font-size: 1.9rem;
+		}
+
+		&__description {
+			font-size: 1.7rem;
+		}
+
+		&__card-title {
+			font-size: 2.1rem;
+		}
+
+		&__card-description {
+			font-size: 1.3rem;
+		}
+	}
+
+	// _gallery
+
+	.gallery {
+		&__title {
+			font-size: 5rem;
+		}
+	}
+
+	// _contact
+
+	.contact {
+		&__title {
+			font-size: 5rem;
+		}
+
+		&__heading {
+			font-size: 1.9rem;
+		}
+
+		&__email {
+			margin-top: 2em;
+		}
+
+		.contact__phone {
+			margin: 2em 0;
+		}
+
+		&__social-media {
+			margin: 2.5em 0;
+		}
+
+		.form {
+			.contact-form {
+				&__input-btn,&__popup-close {
+					font-size: 2.1rem;
+				}
+			}
+		}
+	}
+}
