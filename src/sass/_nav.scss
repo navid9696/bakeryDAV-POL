@@ -9,6 +9,7 @@
 	align-items: center;
 	background-color: $background-color-light;
 	overflow: hidden;
+	transition: background-color 0.5s;
 	z-index: 1000;
 
 	&__logo,
@@ -126,6 +127,7 @@
 			transform-origin: right;
 		}
 	}
+	&__opacity {
+		background-color: #f1f1f1e6;
+	}
 }
-
-

@@ -14,13 +14,17 @@ const popup = document.querySelector('.form__popup')
 const popupBtn = document.querySelector('.form__popup-close')
 const sections = document.querySelectorAll('section')
 const header = document.querySelector('header')
-const navbarHeight = navBar.clientHeight
 const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
+
+const scrollThreshold = 200
+const navbarHeight = navBar.clientHeight
 const headerLinks = [headerBtn, headerArrowDown]
 const viewportHeight = window.innerHeight
-const rootMarginCorrecting = 110
-const rootMarginBottom = `${-(viewportHeight - rootMarginCorrecting)}px`
+const rootMarginBottomCorrection = 110
+const rootMarginTopCorrection = 10
+const rootMarginBottom = `${-(viewportHeight - rootMarginBottomCorrection)}px`
+const rootMarginTop = `${-(navbarHeight - rootMarginTopCorrection)}px`
 const sectionsAndHeader = [header, ...sections]
 
 overlay.style.visibility = 'hidden'
@@ -155,6 +159,9 @@ window.onload = () => {
 	})
 }
 
+const navBarOpacity = () =>
+	window.scrollY >= scrollThreshold ? navBar.classList.add('nav__opacity') : navBar.classList.remove('nav__opacity')
+
 const alingmentToNavBar = link => {
 	const targetId = link.getAttribute('href').substring(1)
 	const targetElement = document.getElementById(targetId)
@@ -167,6 +174,7 @@ const alingmentToNavBar = link => {
 	}
 }
 
+window.addEventListener('scroll', navBarOpacity)
 handleCurrentYear()
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e =>
@@ -176,9 +184,7 @@ popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
-		if (navBtn.classList.contains('is-active')) {
-			closeOverlay()
-		}
+		navBtn.classList.contains('is-active') ? closeOverlay() : false
 
 		alingmentToNavBar(link)
 	})
@@ -192,7 +198,7 @@ headerLinks.forEach(link => {
 
 const options = {
 	root: null,
-	rootMargin: `-110px 0px ${rootMarginBottom} 0px`,
+	rootMargin: `${rootMarginTop} 0px ${rootMarginBottom} 0px`,
 	threshold: 0,
 }
 
