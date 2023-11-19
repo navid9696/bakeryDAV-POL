@@ -105,9 +105,7 @@ const checkErrors = () => {
 	let errorCount = 0
 
 	allInputs.forEach(el => {
-		if (el.classList.contains('error')) {
-			errorCount++
-		}
+		el.classList.contains('error') ? errorCount++ : false
 	})
 
 	if (errorCount === 0 && emailValid === 1) {
@@ -140,11 +138,7 @@ const popupBtnRemoveOverlay = e => {
 
 const checkForm = input => {
 	input.forEach(el => {
-		if (el.value === '') {
-			showError(el, el.placeholder)
-		} else {
-			removeError(el)
-		}
+		el.value === '' ? showError(el, el.placeholder) : removeError(el)
 	})
 }
 
