@@ -415,6 +415,9 @@
 					font-size: 1.4rem;
 				}
 			}
+			&__popup-text {
+				font-size: 2.1rem;
+			}
 		}
 	}
 }
@@ -534,9 +537,13 @@
 
 		.form {
 			.contact-form {
-				&__input-btn,&__popup-close {
+				&__input-btn,
+				&__popup-close {
 					font-size: 2.1rem;
 				}
+			}
+			&__popup-text {
+				font-size: 2.4rem;
 			}
 		}
 	}
