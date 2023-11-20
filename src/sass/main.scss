@@ -12,6 +12,7 @@
 @import './contact';
 @import './footer';
 @import './cookiesAndPrivacyPolicyPopup';
+@import './cookiesAndPrivacyPolicyContent';
 @import './keyframes';
 @import './mediaQueries';
 
@@ -58,6 +59,4 @@ body {
 	padding: 3em 2em;
 }
 
-::marker {
-	color: transparent;
-}
+

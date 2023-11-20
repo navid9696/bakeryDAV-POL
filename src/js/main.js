@@ -16,6 +16,8 @@ const sections = document.querySelectorAll('section')
 const header = document.querySelector('header')
 const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
+const cookiePopup = document.querySelector('.cookie-popup')
+const cookieAccept = document.querySelector('.cookie-popup__btn')
 
 const headerLinks = [headerBtn, headerArrowDown]
 const sectionsAndHeader = [header, ...sections]
@@ -168,8 +170,20 @@ const alingmentToNavBar = link => {
 	}
 }
 
-window.addEventListener('scroll', navBarOpacity)
+const checkCookies = () => {
+	const cookies = localStorage.getItem('cookies')
+	cookies ? cookiePopup.classList.add('close-popup') : false
+}
+
+const cookiePopupClose = e => {
+	e.preventDefault()
+	localStorage.setItem('cookies', 'true')
+	cookiePopup.classList.add('close-popup')
+}
+
 handleCurrentYear()
+checkCookies()
+window.addEventListener('scroll', navBarOpacity)
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('click', e =>
 	e.target === overlay && !popup.classList.contains('show-popup') ? closeOverlay() : false
@@ -191,6 +205,7 @@ headerLinks.forEach(link => {
 		alingmentToNavBar(link)
 	})
 })
+cookieAccept.addEventListener('click', cookiePopupClose)
 
 const options = {
 	root: null,

@@ -4,8 +4,9 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	// text-align: center;
+	background-color: $background-color-dark;
 	border-top: #fff solid 1px;
+
 
 	&__text,
 	&__privacy-policy {
@@ -16,6 +17,11 @@
 	&__privacy-policy {
 		padding: 1em;
 		text-decoration: none;
-		color: #0091ff;
+		color: $privacy-policy-link;
+		transition: color .3s;
+
+		&:hover {
+			color: #0400ff;
+		}
 	}
 }
