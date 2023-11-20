@@ -11,6 +11,7 @@
 @import './gallery';
 @import './contact';
 @import './footer';
+@import './cookiesAndPrivacyPolicyPopup';
 @import './keyframes';
 @import './mediaQueries';
 
@@ -40,7 +41,7 @@ body {
 	}
 }
 
-main,
+.main,
 .footer,
 .nav,
 .header {

@@ -249,6 +249,9 @@
 			&:hover {
 				color: $primary-color;
 			}
+			.svg-icon{
+				fill: #000;
+			}
 
 			&:hover .svg-icon {
 				fill: $primary-color;
