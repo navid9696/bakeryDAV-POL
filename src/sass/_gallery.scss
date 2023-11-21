@@ -23,14 +23,25 @@
 	&__photo {
 		height: 100%;
 		width: 100%;
-		object-fit: cover;
+		object-fit:cover;
 		border: 1px solid #ccc;
 		border-radius: 6px;
 		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
 		transition: scale 0.3s;
 
-		&:hover {
+		&:not(.fullscreen:hover):hover {
 			scale: 1.05;
 		}
 	}
+}
+
+.fullscreen {
+	width: 85vw;
+	height: 85vh;
+	
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	z-index: 9999;
 }

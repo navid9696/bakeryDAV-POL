@@ -16,7 +16,7 @@
 		background-color: #fff;
 		color: #000;
 		border-top: 3px solid #000;
-		transition: bottom 0.5s;
+		transition:  0.5s;
 		z-index: 2137;
 
 		&__text {
@@ -48,7 +48,7 @@
 		&__btn {
 			@include main-btn;
 			padding: 0.7em 1.2em;
-			font-size: 1.5rem;
+			font-size: 1.4rem;
 		}
 	}
 

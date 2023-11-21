@@ -211,6 +211,15 @@
 	}
 
 	// _footer
+
+	// _cookiesAndPrivacyPolicyPopup
+	.cookies {
+		.cookie-popup {
+			&__text {
+				font-size: 1.6rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
@@ -249,7 +258,7 @@
 			&:hover {
 				color: $primary-color;
 			}
-			.svg-icon{
+			.svg-icon {
 				fill: #000;
 			}
 
@@ -423,9 +432,8 @@
 			}
 		}
 	}
+	// _footer
 }
-
-// _footer
 
 @media (min-width: 1280px) {
 	// _nav
@@ -518,6 +526,7 @@
 	// _contact
 
 	.contact {
+		background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url(../../dist/img/various-buns-breakfast-big.jpg);
 		&__title {
 			font-size: 5rem;
 		}
@@ -547,6 +556,18 @@
 			}
 			&__popup-text {
 				font-size: 2.4rem;
+			}
+		}
+	}
+
+	.cookies {
+		.cookie-popup {
+			&__text {
+				font-size: 1.8rem;
+			}
+
+			&__btn{
+				font-size: 1.6rem;
 			}
 		}
 	}

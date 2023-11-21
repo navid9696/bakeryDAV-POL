@@ -18,6 +18,7 @@ const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
 const cookiePopup = document.querySelector('.cookie-popup')
 const cookieAccept = document.querySelector('.cookie-popup__btn')
+const images = document.querySelectorAll('.gallery__img-container')
 
 const headerLinks = [headerBtn, headerArrowDown]
 const sectionsAndHeader = [header, ...sections]
@@ -148,9 +149,7 @@ window.onload = () => {
 	btnForm.addEventListener('click', e => {
 		e.preventDefault()
 		checkForm([msgForm, nameForm, emailForm])
-
 		validateEmail(emailForm)
-
 		checkErrors()
 	})
 }
@@ -180,6 +179,20 @@ const cookiePopupClose = e => {
 	localStorage.setItem('cookies', 'true')
 	cookiePopup.classList.add('close-popup')
 }
+const hrefToURL = correspondingLink => {
+	const href = correspondingLink.getAttribute('href')
+	const currentURL = window.location.href.split('#')[0]
+	const newURL = `${currentURL}${href}`
+	history.pushState({}, '', newURL)
+}
+
+const imgSizeUp = image => {
+	image.classList.toggle('fullscreen')
+}
+
+images.forEach(image => {
+	image.addEventListener('click', () => imgSizeUp(image))
+})
 
 handleCurrentYear()
 checkCookies()
@@ -205,6 +218,7 @@ headerLinks.forEach(link => {
 		alingmentToNavBar(link)
 	})
 })
+
 cookieAccept.addEventListener('click', cookiePopupClose)
 
 const options = {
@@ -222,9 +236,11 @@ const observer = new IntersectionObserver(entries => {
 
 		if (entry.isIntersecting) {
 			if (hamburgerStyle.getPropertyValue('display') === 'none') {
+				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#604a34'
 				id === 'header' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000')
 			} else {
+				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#ffa963'
 				id === 'header' ? svgNavIcon.setAttribute('fill', '#ffa963') : svgNavIcon.setAttribute('fill', '#000')
 			}
@@ -236,4 +252,17 @@ const observer = new IntersectionObserver(entries => {
 
 sectionsAndHeader.forEach(section => {
 	observer.observe(section)
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+	const url = window.location.href
+	const sectionId = url.split('#')[1] // Pobranie fragmentu adresu URL
+
+	if (sectionId) {
+		const targetElement = document.getElementById(sectionId)
+		if (targetElement) {
+			const targetPosition = targetElement.offsetTop - navbarHeight
+			window.scrollTo({ top: targetPosition })
+		}
+	}
 })

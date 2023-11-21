@@ -19,11 +19,11 @@
     <nav class="nav">
         <div class="overlay"></div>
 
-        <a class="nav__logo" href="./index.html#header">
+        <a class="nav__logo" href="./#">
             <img src="dist/img/logo.png" alt="logo firmy" class="logo__img">
         </a>
 
-        <button class="hamburger hamburger--collapse " type="button" aria-label="Menu" aria-controls="navigation"
+        <button class="hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation"
             aria-expanded="true/false">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
@@ -32,9 +32,9 @@
 
 
         <ul class="nav__list">
-            <li class="nav__link"><a href="./index.html#header" class="nav__item"><svg class="svg-icon" fill="#ffffff"
-                        width="64px" height="64px" viewBox="-3.52 -3.52 39.04 39.04" version="1.1"
-                        xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)">
+            <li class="nav__link"><a href="./#home" class="nav__item"><svg class="svg-icon" fill="#ffffff" width="64px"
+                        height="64px" viewBox="-3.52 -3.52 39.04 39.04" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        stroke="#ffffff" transform="matrix(1, 0, 0, 1, 0, 0)">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
                             stroke-width="0.128"></g>
@@ -45,10 +45,10 @@
                             </path>
                         </g>
                     </svg></a></li>
-            <li class="nav__link"><a href="./index.html#aboutUs" class="nav__item">O Nas</a></li>
-            <li class="nav__link"><a href="./index.html#products" class="nav__item">Nasze Produkty</a></li>
-            <li class="nav__link"><a href="./index.html#gallery" class="nav__item">Galeria</a></li>
-            <li class="nav__link"><a href="./index.html#contact" class="nav__item">Kontakt</a></li>
+            <li class="nav__link"><a href="./#o-nas" class="nav__item">O Nas</a></li>
+            <li class="nav__link"><a href="./#nasze-produkty" class="nav__item">Nasze Produkty</a></li>
+            <li class="nav__link"><a href="./#galeria" class="nav__item">Galeria</a></li>
+            <li class="nav__link"><a href="./#kontakt" class="nav__item">Kontakt</a></li>
         </ul>
 
 
@@ -61,7 +61,13 @@
         <!-- @include 'cookiesAndPrivacyPolicyPopup.kit' -->
     </main>
     <!-- @include 'footer.kit' -->
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            startEvent: 'DOMContentLoaded',
+            duration: 500
+        });
+    </script>
     <script src="dist/js/cookiesAndPrivacyPolicy.min.js"></script>
 </body>
 
