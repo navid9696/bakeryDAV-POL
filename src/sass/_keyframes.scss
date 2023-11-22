@@ -30,12 +30,19 @@
 	}
 }
 
-@keyframes a {
-	from {
+@keyframes img-sizeup {
+	0%{
+		position: fixed;
+		visibility: hidden;
 		opacity: 0;
 	}
 
-	to{
+	
+
+	100% {
+		position: fixed;
+		visibility: visible;
 		opacity: 1;
+		
 	}
 }

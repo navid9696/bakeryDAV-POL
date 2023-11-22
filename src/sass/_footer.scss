@@ -7,7 +7,6 @@
 	background-color: $background-color-dark;
 	border-top: #fff solid 1px;
 
-
 	&__text,
 	&__privacy-policy {
 		font-size: 1.3rem;
@@ -15,10 +14,10 @@
 	}
 
 	&__privacy-policy {
-		padding: 1em;
+		padding: 0.5em;
 		text-decoration: none;
 		color: $privacy-policy-link;
-		transition: color .3s;
+		transition: color 0.3s;
 
 		&:hover {
 			color: #4690ff;

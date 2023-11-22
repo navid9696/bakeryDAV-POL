@@ -18,8 +18,9 @@ const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
 const cookiePopup = document.querySelector('.cookie-popup')
 const cookieAccept = document.querySelector('.cookie-popup__btn')
-const images = document.querySelectorAll('.gallery__img-container')
-
+const gallery = document.querySelectorAll('.gallery__img-container')
+const images = document.querySelectorAll('.gallery__photo')
+const fullscreenImages = document.querySelectorAll('.gallery__photo-fullscreen')
 const headerLinks = [headerBtn, headerArrowDown]
 const sectionsAndHeader = [header, ...sections]
 const navbarHeight = navBar.clientHeight
@@ -29,6 +30,8 @@ const rootMarginBottomCorrection = 110
 const rootMarginTopCorrection = 10
 const rootMarginBottom = `${-(viewportHeight - rootMarginBottomCorrection)}px`
 const rootMarginTop = `${-(navbarHeight + rootMarginTopCorrection)}px`
+
+let correspondingFullscreenLi
 
 overlay.style.visibility = 'hidden'
 
@@ -186,21 +189,38 @@ const hrefToURL = correspondingLink => {
 	history.pushState({}, '', newURL)
 }
 
-const imgSizeUp = image => {
-	image.classList.toggle('fullscreen')
-}
-
 images.forEach(image => {
-	image.addEventListener('click', () => imgSizeUp(image))
+	image.addEventListener('click', () => {
+		const clickedSrc = image.getAttribute('src')
+
+		fullscreenImages.forEach(fullscreenImg => {
+			const fullscreenSrc = fullscreenImg.getAttribute('src')
+			const parentLi = fullscreenImg.parentElement
+
+			if (clickedSrc === fullscreenSrc) {
+				parentLi.classList.toggle('animation')
+				correspondingFullscreenLi = parentLi
+				closeOverlay()
+			} else {
+				parentLi.classList.remove('animation')
+			}
+		})
+	})
 })
 
 handleCurrentYear()
 checkCookies()
 window.addEventListener('scroll', navBarOpacity)
 navBtn.addEventListener('click', handleNav)
-window.addEventListener('click', e =>
-	e.target === overlay && !popup.classList.contains('show-popup') ? closeOverlay() : false
-)
+
+window.addEventListener('click', e => {
+	fullscreenImages.forEach(img => {
+		if (e.target === img || (e.target === overlay && !popup.classList.contains('show-popup'))) {
+			closeOverlay()
+			correspondingFullscreenLi.classList.remove('animation')
+		}
+	})
+})
 
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
 links.forEach(link => {
@@ -238,11 +258,11 @@ const observer = new IntersectionObserver(entries => {
 			if (hamburgerStyle.getPropertyValue('display') === 'none') {
 				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#604a34'
-				id === 'header' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000')
+				id === 'home' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000')
 			} else {
 				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#ffa963'
-				id === 'header' ? svgNavIcon.setAttribute('fill', '#ffa963') : svgNavIcon.setAttribute('fill', '#000')
+				id === 'home' ? svgNavIcon.setAttribute('fill', '#ffa963') : svgNavIcon.setAttribute('fill', '#fff')
 			}
 		} else {
 			correspondingLink.style.color = ''
