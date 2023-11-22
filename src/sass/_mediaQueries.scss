@@ -258,6 +258,7 @@
 			&:hover {
 				color: $primary-color;
 			}
+			
 
 			&:hover .svg-icon {
 				fill: $primary-color;
@@ -523,8 +524,7 @@
 	// _contact
 
 	.contact {
-		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-			url(../../dist/img/various-buns-breakfast-big.jpg);
+		background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url(../../dist/img/various-buns-breakfast-big.jpg);
 		&__title {
 			font-size: 5rem;
 		}
@@ -564,7 +564,7 @@
 				font-size: 1.8rem;
 			}
 
-			&__btn {
+			&__btn{
 				font-size: 1.6rem;
 			}
 		}

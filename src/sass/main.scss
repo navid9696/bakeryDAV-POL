@@ -16,14 +16,9 @@
 @import './keyframes';
 @import './mediaQueries';
 
-// html,
-// body {
-// 	// height: 100%;
-// 	border: none;
-// 	border-style: hidden;
-// 	border-color: #fff;
-// 	outline: none;
-// }
+:root {
+	border: none;
+}
 
 html {
 	font-size: 62.5%;

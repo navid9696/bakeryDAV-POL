@@ -228,7 +228,6 @@ links.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
 		navBtn.classList.contains('is-active') ? closeOverlay() : false
-
 		alingmentToNavBar(link)
 	})
 })
@@ -287,3 +286,4 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 })
+

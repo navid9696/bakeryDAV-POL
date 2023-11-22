@@ -18,6 +18,8 @@ const headerBtn = document.querySelector('.header__btn-link')
 const headerArrowDown = document.querySelector('.header__arrow-link')
 const cookiePopup = document.querySelector('.cookie-popup')
 const cookieAccept = document.querySelector('.cookie-popup__btn')
+const hamburgerStyle = window.getComputedStyle(document.querySelector('.hamburger'))
+const svgNavIcon = document.querySelector('.svg-icon')
 
 const navbarHeight = navBar.clientHeight
 const scrollThreshold = 200
@@ -71,6 +73,13 @@ const cookiePopupClose = e => {
 	cookiePopup.classList.add('close-popup')
 }
 
+const homeHandleColor = () => {
+	hamburgerStyle.getPropertyValue('display') === 'none'
+		? svgNavIcon.setAttribute('fill', '#000000')
+		: svgNavIcon.setAttribute('fill', '#ffffff')
+}
+
+homeHandleColor()
 handleCurrentYear()
 checkCookies()
 window.addEventListener('scroll', navBarOpacity)
