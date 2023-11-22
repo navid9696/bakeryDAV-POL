@@ -200,7 +200,8 @@ images.forEach(image => {
 			if (clickedSrc === fullscreenSrc) {
 				parentLi.classList.toggle('animation')
 				correspondingFullscreenLi = parentLi
-				closeOverlay()
+				handleOverlay()
+				blockScroll.classList.add('block-scroll')
 			} else {
 				parentLi.classList.remove('animation')
 			}
@@ -258,7 +259,7 @@ const observer = new IntersectionObserver(entries => {
 			if (hamburgerStyle.getPropertyValue('display') === 'none') {
 				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#604a34'
-				id === 'home' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000')
+				id === 'home' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000000')
 			} else {
 				hrefToURL(correspondingLink)
 				correspondingLink.style.color = '#ffa963'

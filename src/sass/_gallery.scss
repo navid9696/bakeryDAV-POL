@@ -44,6 +44,7 @@
 		translate: -50% -50%;
 		object-fit: cover;
 		z-index: 9999;
+		overflow: visible;
 		visibility: hidden;
 
 		&::marker {
@@ -53,16 +54,20 @@
 
 	&__photo-fullscreen {
 		height: 100%;
-		width: 100%;
-		object-fit: cover;
+		width: auto;
+		margin: 0 auto;
+		object-fit: fill;
 		border: 1px solid #ccc;
 		border-radius: 6px;
 		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
-		transition: scale 0.3s;
-		cursor: zoom-in;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 
 .animation {
-	animation: img-sizeup 1s ease both;
+	animation: img-sizeup .5s ease both;
 }
+
