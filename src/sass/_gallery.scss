@@ -36,8 +36,8 @@
 	}
 
 	&__img-fullscreen {
-		width: 95vw;
-		height: 95vh;
+		width: 95dvw;
+		height: 95dvh;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -46,9 +46,8 @@
 		align-items: center;
 		justify-content: center;
 		object-fit: cover;
-		z-index: 9999;
-		overflow: visible;
 		visibility: hidden;
+		z-index: 9999;
 
 		&::marker {
 			color: transparent;
@@ -63,7 +62,7 @@
 		border: 1px solid #ccc;
 		border-radius: 6px;
 		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
-		
+		z-index: 9999;
 
 		&:hover {
 			cursor: pointer;

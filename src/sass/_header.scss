@@ -13,7 +13,7 @@
 		top: 0;
 		left: 0;
 		background-image: url(../img/headerBGsmall.jpg);
-		background-position: bottom right;
+		background-position: right;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
@@ -58,7 +58,7 @@
 	}
 
 	&__description {
-		margin: .5em 0;
+		margin: 0.5em 0;
 		font-size: 2rem;
 		font-style: italic;
 		letter-spacing: 1px;
