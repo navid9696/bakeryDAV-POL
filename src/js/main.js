@@ -198,10 +198,21 @@ const cardsSizes = () => {
 
 	cardInfos.forEach((cardInfo, index) => {
 		const infoHeight = window.getComputedStyle(cardInfo).height
+		const imgHeight = window.getComputedStyle(cardImgs[index]).height
 		const cardImg = cardImgs[index]
 		const card = cards[index]
-		cardImg.style.height = infoHeight
-		card.style.height = infoHeight
+		const info = cardInfos[index]
+		console.log(imgHeight)
+		console.log(infoHeight)
+
+		if (infoHeight > cardImg.style.height) {
+			cardImg.style.height = infoHeight
+			card.style.height = infoHeight
+		} else if (infoHeight < imgHeight) {
+			cardImg.style.height = imgHeight
+			card.style.height = imgHeight
+			info.style.height = imgHeight
+		}
 	})
 }
 
