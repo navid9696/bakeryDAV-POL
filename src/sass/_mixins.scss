@@ -67,6 +67,8 @@
 	font-weight: bolder;
 	color: $color;
 	text-shadow: 1px 1px #ffffff5d;
-	border: 2px solid $border-color;
-	border-radius: 8px;
+	border-right: 2px solid $border-color;
+	border-left: 2px solid $border-color;
+	border-radius: 4px;
+
 }
