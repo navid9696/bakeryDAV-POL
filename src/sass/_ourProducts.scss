@@ -34,7 +34,7 @@
 	}
 
 	&__description {
-		width: 85%;
+		width: 75%;
 		font-size: 1.4rem;
 		font-weight: 500;
 		line-height: 1.6;
@@ -44,7 +44,7 @@
 		&:nth-of-type(2) {
 			margin: 1em 0 1em auto;
 			// margin-left: auto;
-			text-align: right;
+			// text-align: right;
 		}
 	}
 
@@ -71,7 +71,8 @@
 	}
 
 	&__card {
-		height: 400px;
+		min-height: 400px;
+		max-height: 700px;
 		min-width: 250px;
 		max-width: 300px;
 		border-radius: 12px;
@@ -99,13 +100,13 @@
 
 	&__card-description {
 		font-style: italic;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		word-wrap: break-word;
 		color: #101010;
 	}
 
 	&__img-container {
-		height: 60%;
+		height: 250px;
 		width: 100%;
 		border-radius: 8px;
 		overflow: hidden;
