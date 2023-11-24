@@ -22,7 +22,7 @@
 	}
 
 	&__container {
-		height: calc(100vh - 100px);
+		height: calc(100svh - 100px);
 		position: relative;
 		margin-top: 100px;
 		padding: 0 2em;
@@ -68,6 +68,7 @@
 	&__btn {
 		@include main-btn;
 	}
+	
 
 	&__attribution {
 		@include attribution;

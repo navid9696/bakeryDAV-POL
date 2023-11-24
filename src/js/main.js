@@ -176,13 +176,20 @@ const alingmentToNavBar = link => {
 
 const checkCookies = () => {
 	const cookies = localStorage.getItem('cookies')
-	cookies ? cookiePopup.classList.add('close-popup') : false
+	if (cookies) {
+		cookiePopup.classList.add('close-popup')
+	} else {
+		handleOverlay()
+		blockScroll.classList.add('block-scroll')
+
+	}
 }
 
 const cookiePopupClose = e => {
 	e.preventDefault()
 	localStorage.setItem('cookies', 'true')
 	cookiePopup.classList.add('close-popup')
+	closeOverlay()
 }
 const hrefToURL = correspondingLink => {
 	const href = correspondingLink.getAttribute('href')
@@ -220,6 +227,12 @@ const cardsSizes = () => {
 	})
 }
 
+handleCurrentYear()
+checkCookies()
+cardsSizes()
+window.addEventListener('scroll', navBarOpacity)
+navBtn.addEventListener('click', handleNav)
+
 images.forEach(image => {
 	image.addEventListener('click', () => {
 		const clickedSrc = image.getAttribute('src')
@@ -239,12 +252,6 @@ images.forEach(image => {
 		})
 	})
 })
-
-handleCurrentYear()
-checkCookies()
-cardsSizes()
-window.addEventListener('scroll', navBarOpacity)
-navBtn.addEventListener('click', handleNav)
 
 window.addEventListener('click', e => {
 	fullscreenImages.forEach(img => {

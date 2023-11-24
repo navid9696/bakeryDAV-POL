@@ -35,6 +35,11 @@
 		}
 	}
 
+	&__fullscreen-container {
+		position: relative;
+		bottom: 0;
+	}
+
 	&__img-fullscreen {
 		width: 95dvw;
 		height: 95dvh;
@@ -56,6 +61,7 @@
 
 	&__photo-fullscreen {
 		max-width: 100%;
+		max-height: 100%;
 		max-height: 100%;
 		margin: auto;
 		object-fit: fill;
