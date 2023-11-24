@@ -30,6 +30,8 @@ const rootMarginBottomCorrection = 110
 const rootMarginTopCorrection = 10
 const rootMarginBottom = `${-(viewportHeight - rootMarginBottomCorrection)}px`
 const rootMarginTop = `${-(navbarHeight + rootMarginTopCorrection)}px`
+const cardImg = document.querySelectorAll('.about-us__card-img')
+const cardInfo = document.querySelectorAll('.about-us__card-info')
 
 let correspondingFullscreenLi
 
@@ -189,6 +191,20 @@ const hrefToURL = correspondingLink => {
 	history.pushState({}, '', newURL)
 }
 
+const cardsSizes = () => {
+	const cardImgs = document.querySelectorAll('.about-us__card-img')
+	const cardInfos = document.querySelectorAll('.about-us__card-info')
+	const cards = document.querySelectorAll('.about-us__card')
+
+	cardInfos.forEach((cardInfo, index) => {
+		const infoHeight = window.getComputedStyle(cardInfo).height
+		const cardImg = cardImgs[index]
+		const card = cards[index]
+		cardImg.style.height = infoHeight
+		card.style.height = infoHeight
+	})
+}
+
 images.forEach(image => {
 	image.addEventListener('click', () => {
 		const clickedSrc = image.getAttribute('src')
@@ -211,6 +227,7 @@ images.forEach(image => {
 
 handleCurrentYear()
 checkCookies()
+cardsSizes()
 window.addEventListener('scroll', navBarOpacity)
 navBtn.addEventListener('click', handleNav)
 
@@ -286,4 +303,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 })
-

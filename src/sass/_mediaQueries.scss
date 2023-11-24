@@ -172,35 +172,6 @@
 
 	// _ourProducts
 
-	.our-products {
-		&__box {
-			width: 100%;
-			display: flex;
-		}
-
-		&__description {
-			font-size: 1.5rem;
-		}
-
-		&__description-box {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			width: 50%;
-		}
-
-		&__box-img {
-			width: 50%;
-			height: auto;
-			transform-origin: right;
-
-			&--right {
-				transform-origin: left;
-				order: 1;
-			}
-		}
-	}
-
 	// _contact
 
 	.contact {
@@ -257,7 +228,6 @@
 			&:hover {
 				color: $primary-color;
 			}
-			
 
 			&:hover .svg-icon {
 				fill: $primary-color;
@@ -270,10 +240,10 @@
 	}
 
 	// _header
-.header{
-	min-height: 100dvh;
-	min-width: 100dvw;
-}
+	.header {
+		min-height: 100dvh;
+		min-width: 100dvw;
+	}
 	// _aboutUs
 
 	.about-us {
@@ -302,7 +272,6 @@
 	}
 
 	// _ourProducts
-
 	.our-products {
 		&__title {
 			font-size: 4.5rem;
@@ -315,12 +284,33 @@
 
 		&__box {
 			margin: 3em auto;
-			height: 300px;
+			height: auto;
+			width: 100%;
+			display: flex;
 		}
 
 		&__description {
+			font-size: 1.5rem;
+		}
+
+		&__description-box {
 			width: 75%;
 			font-size: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 50%;
+		}
+
+		&__box-img {
+			width: 50%;
+			height: auto;
+			transform-origin: right;
+
+			&--right {
+				transform-origin: left;
+				order: 1;
+			}
 		}
 	}
 
@@ -505,6 +495,10 @@
 			font-size: 1.8rem;
 		}
 
+		&__description-box{
+			padding: 2em;
+		}
+
 		&__card-title {
 			font-size: 2.1rem;
 		}
@@ -525,7 +519,8 @@
 	// _contact
 
 	.contact {
-		background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.8)),url(../../dist/img/various-buns-breakfast-big.jpg);
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+			url(../../dist/img/various-buns-breakfast-big.jpg);
 		&__title {
 			font-size: 5rem;
 		}
@@ -565,7 +560,7 @@
 				font-size: 1.8rem;
 			}
 
-			&__btn{
+			&__btn {
 				font-size: 1.6rem;
 			}
 		}
