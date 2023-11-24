@@ -5,7 +5,6 @@
 
 	&__heading {
 		@include heading(#fff, #fff);
-		width: fit-content;
 		margin: 4em auto 0;
 	}
 
@@ -51,7 +50,7 @@
 	&__box-img {
 		width: 100%;
 		transform-origin: bottom;
-		transition: scale 0.5s, filter 0.5s;
+		transition: scale 0.8s, filter 0.8s;
 		filter: brightness(50%);
 		filter: grayscale(100%);
 		&:hover {
@@ -114,7 +113,7 @@
 		.our-products__img {
 			height: 100%;
 			width: 100%;
-			transition: scale 0.5s;
+			transition: scale 0.8s;
 
 			&:hover {
 				scale: 1.3;

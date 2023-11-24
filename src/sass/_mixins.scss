@@ -1,6 +1,6 @@
 @mixin title($color: $primary-color) {
 	width: fit-content;
-	margin: 0 auto 1em;
+	margin: 0 auto 2em;
 	position: relative;
 	text-align: center;
 	font-size: 4rem;
@@ -29,7 +29,7 @@
 	text-transform: uppercase;
 	border-radius: 12px;
 	border: 2px solid #000;
-	transition: background-color 0.5s, color 0.5s, border 0.5s, border 0.5s;
+	transition: background-color 0.6s, color 0.6s, border 0.6s;
 	cursor: pointer;
 
 	&:hover {
@@ -59,6 +59,7 @@
 }
 
 @mixin heading($color: #000, $border-color: #000) {
+	width: fit-content;
 	margin-bottom: 1.5em;
 	padding: 0.5em;
 	font-size: 1.6rem;

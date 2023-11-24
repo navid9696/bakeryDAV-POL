@@ -196,23 +196,27 @@ const cardsSizes = () => {
 	const cardInfos = document.querySelectorAll('.about-us__card-info')
 	const cards = document.querySelectorAll('.about-us__card')
 
+	let maxHeight = 0
+
 	cardInfos.forEach((cardInfo, index) => {
-		const infoHeight = window.getComputedStyle(cardInfo).height
-		const imgHeight = window.getComputedStyle(cardImgs[index]).height
+		const infoHeight = parseInt(window.getComputedStyle(cardInfo).height)
+		const imgHeight = parseInt(window.getComputedStyle(cardImgs[index]).height)
+
+		if (infoHeight > imgHeight) {
+			maxHeight = infoHeight
+		} else {
+			maxHeight = imgHeight
+		}
+	})
+
+	cardInfos.forEach((cardInfo, index) => {
 		const cardImg = cardImgs[index]
 		const card = cards[index]
-		const info = cardInfos[index]
-		console.log(imgHeight)
-		console.log(infoHeight)
+		const info = cardInfo
 
-		if (infoHeight > cardImg.style.height) {
-			cardImg.style.height = infoHeight
-			card.style.height = infoHeight
-		} else if (infoHeight < imgHeight) {
-			cardImg.style.height = imgHeight
-			card.style.height = imgHeight
-			info.style.height = imgHeight
-		}
+		cardImg.style.height = `${maxHeight}px`
+		card.style.height = `${maxHeight}px`
+		info.style.height = `${maxHeight}px`
 	})
 }
 

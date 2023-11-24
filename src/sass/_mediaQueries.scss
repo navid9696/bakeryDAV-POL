@@ -547,12 +547,25 @@
 			margin-top: 2em;
 		}
 
+		&__email-address {
+			font-size: 2.6rem;
+		}
+
+		&__phone-number {
+			font-size: 2.6rem;
+		}
+
 		.contact__phone {
 			margin: 2em 0;
 		}
 
 		&__social-media {
 			margin: 2.5em 0;
+		}
+
+		& .gmp-map {
+			height: 420px;
+			width: 700px;
 		}
 
 		.form {
