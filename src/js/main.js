@@ -233,11 +233,19 @@ navBtn.addEventListener('click', handleNav)
 
 window.addEventListener('click', e => {
 	fullscreenImages.forEach(img => {
-		if (e.target === img || (e.target === overlay && !popup.classList.contains('show-popup'))) {
+		if (e.target === img || e.key === 'Escape' || (e.target === overlay && !popup.classList.contains('show-popup'))) {
 			closeOverlay()
 			correspondingFullscreenLi.classList.remove('animation')
 		}
 	})
+})
+
+window.addEventListener('keydown', e => {
+	if (e.key === 'Escape' && correspondingFullscreenLi.classList.contains('animation')) {
+		// Tutaj wykonaj akcję po naciśnięciu klawisza "ESC"
+		closeOverlay()
+		correspondingFullscreenLi.classList.remove('animation')
+	}
 })
 
 popupBtn.addEventListener('click', popupBtnRemoveOverlay)
