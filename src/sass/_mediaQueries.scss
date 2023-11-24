@@ -313,11 +313,11 @@
 			}
 		}
 
-		&__card-title{
+		&__card-title {
 			font-size: 2.2rem;
 		}
 
-		&__card-description{
+		&__card-description {
 			font-size: 1.6rem;
 		}
 	}
@@ -346,11 +346,21 @@
 		}
 
 		&__email-address {
+			margin-left: 2em;
 			font-size: 2.2rem;
 		}
 
+		&__email .email__link {
+			flex-direction: row;
+		}
+
 		&__phone-number {
+			margin-left: 2em;
 			font-size: 2.2rem;
+		}
+
+		.phone__image-link {
+			flex-direction: row;
 		}
 
 		& .gmp-map {
@@ -441,8 +451,6 @@
 			padding-left: 5em;
 			padding-right: 10em;
 		}
-
-		
 	}
 
 	// _header
