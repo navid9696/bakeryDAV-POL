@@ -179,10 +179,11 @@ const checkCookies = () => {
 
 	if (cookies) {
 		cookiePopup.classList.add('close-popup')
-	} else if (cookies === null) if (cookies === null) {
-		handleOverlay()
-		blockScroll.classList.add('block-scroll')
-	}
+	} else if (cookies === null)
+		if (cookies === null) {
+			handleOverlay()
+			blockScroll.classList.add('block-scroll')
+		}
 }
 
 const cookiePopupClose = e => {
