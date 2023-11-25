@@ -64,7 +64,11 @@ const navBarOpacity = () =>
 
 const checkCookies = () => {
 	const cookies = localStorage.getItem('cookies')
-	cookies ? cookiePopup.classList.add('close-popup') : false
+
+	if (cookies) {
+		cookiePopup.classList.add('close-popup')
+	} else if (cookies === null) handleOverlay()
+	blockScroll.classList.add('block-scroll')
 }
 
 const cookiePopupClose = e => {
