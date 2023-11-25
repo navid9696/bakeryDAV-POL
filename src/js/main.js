@@ -32,12 +32,12 @@ const rootMarginBottom = `${-(viewportHeight - rootMarginBottomCorrection)}px`
 const rootMarginTop = `${-(navbarHeight + rootMarginTopCorrection)}px`
 const cardImg = document.querySelectorAll('.about-us__card-img')
 const cardInfo = document.querySelectorAll('.about-us__card-info')
-
+const EMAILJS_API_KEY = 'lgkz6CPgh6GbEuCoO'
 let correspondingFullscreenLi
 
 overlay.style.visibility = 'hidden'
 
-emailjs.init('lgkz6CPgh6GbEuCoO')
+emailjs.init(`${EMAILJS_API_KEY}`)
 let emailValid = 0
 
 const validateEmail = email => {
@@ -180,10 +180,8 @@ const checkCookies = () => {
 	const myCookie = getCookie('myCookie')
 
 	if (myCookie === 'true') {
-		console.log(myCookie)
 		cookiePopup.classList.add('close-popup')
 	} else {
-		console.log(myCookie)
 		navBtn.setAttribute('disabled', 'true')
 		overlay.style.visibility = 'visible'
 		setTimeout(function () {
@@ -224,8 +222,6 @@ const cookiePopupClose = e => {
 	cookiePopup.classList.add('close-popup')
 	closeOverlay()
 }
-
-checkCookies()
 
 const hrefToURL = correspondingLink => {
 	const href = correspondingLink.getAttribute('href')

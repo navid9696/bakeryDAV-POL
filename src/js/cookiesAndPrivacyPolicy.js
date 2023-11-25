@@ -63,22 +63,53 @@ const navBarOpacity = () =>
 	window.scrollY >= scrollThreshold ? navBar.classList.add('nav__opacity') : navBar.classList.remove('nav__opacity')
 
 const checkCookies = () => {
-	const cookies = localStorage.getItem('cookies')
+	const myCookie = getCookie('myCookie')
 
-	if (cookies) {
+	if (myCookie === 'true') {
 		cookiePopup.classList.add('close-popup')
-	} else if (cookies === null) {
-		handleOverlay()
+	} else {
+		navBtn.setAttribute('disabled', 'true')
+		overlay.style.visibility = 'visible'
+		setTimeout(function () {
+			overlay.classList.add('active')
+		}, 1)
 		blockScroll.classList.add('block-scroll')
 	}
 }
 
+const getCookie = cookieName => {
+	const name = cookieName + '='
+	const decodedCookie = decodeURIComponent(document.cookie)
+	const cookieArray = decodedCookie.split(';')
+
+	for (let i = 0; i < cookieArray.length; i++) {
+		let cookie = cookieArray[i]
+		while (cookie.charAt(0) === ' ') {
+			cookie = cookie.substring(1)
+		}
+		if (cookie.indexOf(name) === 0) {
+			return cookie.substring(name.length, cookie.length)
+		}
+	}
+	return ''
+}
+
+const setCookie = (cookieName, cookieValue, expirationDays) => {
+	const d = new Date()
+	d.setTime(d.getTime() + expirationDays * 24 * 60 * 60 * 1000)
+	const expires = 'expires=' + d.toUTCString()
+	const sameSite = 'SameSite=None; Secure'
+	document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/;' + sameSite
+}
+
 const cookiePopupClose = e => {
 	e.preventDefault()
-	localStorage.setItem('cookies', 'true')
+	setCookie('myCookie', 'true', 30)
 	cookiePopup.classList.add('close-popup')
 	closeOverlay()
 }
+
+checkCookies()
 
 const homeHandleColor = () => {
 	hamburgerStyle.getPropertyValue('display') === 'none'
@@ -91,7 +122,10 @@ handleCurrentYear()
 checkCookies()
 window.addEventListener('scroll', navBarOpacity)
 navBtn.addEventListener('click', handleNav)
-cookieAccept.addEventListener('click', cookiePopupClose)
+cookieAccept.addEventListener('click', e => {
+	cookiePopupClose(e)
+	navBtn.removeAttribute('disabled')
+})
 links.forEach(link => {
 	link.addEventListener('click', e => {
 		navBtn.classList.contains('is-active') ? closeOverlay() : false
