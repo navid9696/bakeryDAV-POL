@@ -329,7 +329,7 @@ sectionsAndHeader.forEach(section => {
 document.addEventListener('DOMContentLoaded', () => {
 	const url = window.location.href
 	const sectionId = url.split('#')[1]
-	console.log(url, sectionId)
+
 	if (sectionId) {
 		const targetElement = document.getElementById(sectionId)
 		if (targetElement) {
