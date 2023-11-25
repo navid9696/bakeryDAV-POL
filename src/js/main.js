@@ -176,12 +176,12 @@ const alingmentToNavBar = link => {
 
 const checkCookies = () => {
 	const cookies = localStorage.getItem('cookies')
+
 	if (cookies) {
 		cookiePopup.classList.add('close-popup')
-	} else {
+	} else if (cookies === null) {
 		handleOverlay()
 		blockScroll.classList.add('block-scroll')
-
 	}
 }
 
@@ -255,16 +255,22 @@ images.forEach(image => {
 
 window.addEventListener('click', e => {
 	fullscreenImages.forEach(img => {
-		if (e.target === img || e.key === 'Escape' || (e.target === overlay && !popup.classList.contains('show-popup'))) {
+		const parentLi = img.parentElement
+		if (e.target === img || e.target === parentLi) {
 			closeOverlay()
 			correspondingFullscreenLi.classList.remove('animation')
 		}
 	})
 })
 
+window.addEventListener('click', e => {
+	e.target === overlay && !popup.classList.contains('show-popup') && cookiePopup.classList.contains('close-popup')
+		? closeOverlay()
+		: false
+})
+
 window.addEventListener('keydown', e => {
 	if (e.key === 'Escape' && correspondingFullscreenLi.classList.contains('animation')) {
-		// Tutaj wykonaj akcję po naciśnięciu klawisza "ESC"
 		closeOverlay()
 		correspondingFullscreenLi.classList.remove('animation')
 	}
