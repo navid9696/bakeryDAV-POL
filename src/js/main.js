@@ -189,6 +189,7 @@ const cookiePopupClose = e => {
 	cookiePopup.classList.add('close-popup')
 	closeOverlay()
 }
+
 const hrefToURL = correspondingLink => {
 	const href = correspondingLink.getAttribute('href')
 	const currentURL = window.location.href.split('#')[0]

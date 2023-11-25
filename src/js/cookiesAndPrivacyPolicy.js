@@ -75,6 +75,7 @@ const cookiePopupClose = e => {
 	e.preventDefault()
 	localStorage.setItem('cookies', 'true')
 	cookiePopup.classList.add('close-popup')
+	closeOverlay()
 }
 
 const homeHandleColor = () => {
