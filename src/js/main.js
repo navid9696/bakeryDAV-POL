@@ -45,6 +45,7 @@ const validateEmail = email => {
 		/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/gim
 	if (emailReg.test(email.value) && nameForm.value != '' && msgForm.value != '') {
 		removeError(email)
+		navBtn.setAttribute('disabled', 'true')
 		contactForm.contact_number.value = Math.floor(Math.random() * 100000)
 		emailjs
 			.sendForm('service_4rabq7e', 'template_6wtj7m3', contactForm)
@@ -142,6 +143,7 @@ const popupBtnRemoveOverlay = e => {
 	}, 300)
 	overlay.classList.remove('active')
 	popup.classList.remove('show-popup')
+	navBtn.removeAttribute('disabled')
 }
 
 const checkForm = input => {
@@ -175,22 +177,55 @@ const alingmentToNavBar = link => {
 }
 
 const checkCookies = () => {
-	const cookies = localStorage.getItem('cookies')
+	const myCookie = getCookie('myCookie')
 
-	if (cookies) {
+	if (myCookie === 'true') {
+		console.log(myCookie)
 		cookiePopup.classList.add('close-popup')
-	} else if (cookies === null) {
-		handleOverlay()
+	} else {
+		console.log(myCookie)
+		navBtn.setAttribute('disabled', 'true')
+		overlay.style.visibility = 'visible'
+		setTimeout(function () {
+			overlay.classList.add('active')
+		}, 1)
 		blockScroll.classList.add('block-scroll')
 	}
 }
 
+const getCookie = cookieName => {
+	const name = cookieName + '='
+	const decodedCookie = decodeURIComponent(document.cookie)
+	const cookieArray = decodedCookie.split(';')
+
+	for (let i = 0; i < cookieArray.length; i++) {
+		let cookie = cookieArray[i]
+		while (cookie.charAt(0) === ' ') {
+			cookie = cookie.substring(1)
+		}
+		if (cookie.indexOf(name) === 0) {
+			return cookie.substring(name.length, cookie.length)
+		}
+	}
+	return ''
+}
+
+const setCookie = (cookieName, cookieValue, expirationDays) => {
+	const d = new Date()
+	d.setTime(d.getTime() + expirationDays * 24 * 60 * 60 * 1000)
+	const expires = 'expires=' + d.toUTCString()
+	const sameSite = 'SameSite=None; Secure'
+	document.cookie = cookieName + '=' + cookieValue + ';' + expires + ';path=/;' + sameSite
+}
+
 const cookiePopupClose = e => {
 	e.preventDefault()
-	localStorage.setItem('cookies', 'true')
+	setCookie('myCookie', 'true', 30)
 	cookiePopup.classList.add('close-popup')
 	closeOverlay()
 }
+
+checkCookies()
 
 const hrefToURL = correspondingLink => {
 	const href = correspondingLink.getAttribute('href')
@@ -277,7 +312,10 @@ window.addEventListener('keydown', e => {
 	}
 })
 
-popupBtn.addEventListener('click', popupBtnRemoveOverlay)
+popupBtn.addEventListener('click', e => {
+	popupBtnRemoveOverlay(e)
+	navBtn.removeAttribute('disabled')
+})
 links.forEach(link => {
 	link.addEventListener('click', e => {
 		e.preventDefault()
@@ -293,7 +331,10 @@ headerLinks.forEach(link => {
 	})
 })
 
-cookieAccept.addEventListener('click', cookiePopupClose)
+cookieAccept.addEventListener('click', e => {
+	cookiePopupClose(e)
+	navBtn.removeAttribute('disabled')
+})
 
 const options = {
 	root: null,
