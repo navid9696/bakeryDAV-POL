@@ -179,8 +179,10 @@ const checkCookies = () => {
 
 	if (cookies) {
 		cookiePopup.classList.add('close-popup')
-	} else if (cookies === null) handleOverlay()
-	blockScroll.classList.add('block-scroll')
+	} else if (cookies === null) {
+		handleOverlay()
+		blockScroll.classList.add('block-scroll')
+	}
 }
 
 const cookiePopupClose = e => {
@@ -329,7 +331,6 @@ sectionsAndHeader.forEach(section => {
 document.addEventListener('DOMContentLoaded', () => {
 	const url = window.location.href
 	const sectionId = url.split('#')[1]
-
 	if (sectionId) {
 		const targetElement = document.getElementById(sectionId)
 		if (targetElement) {
