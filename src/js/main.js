@@ -76,7 +76,7 @@ const closeOverlay = () => {
 }
 
 const handleOverlay = () => {
-	if (overlay.style.visibility == 'hidden') {
+	if (overlay.style.visibility === 'hidden') {
 		overlay.style.visibility = 'visible'
 		setTimeout(function () {
 			overlay.classList.add('active')
@@ -176,12 +176,12 @@ const alingmentToNavBar = link => {
 
 const checkCookies = () => {
 	const cookies = localStorage.getItem('cookies')
+	console.log(cookies)
 	if (cookies) {
 		cookiePopup.classList.add('close-popup')
-	} else {
+	} else if (cookies === null) {
 		handleOverlay()
 		blockScroll.classList.add('block-scroll')
-
 	}
 }
 
