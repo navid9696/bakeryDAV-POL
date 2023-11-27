@@ -17,6 +17,8 @@
 @import './mediaQueries';
 
 :root {
+	--mobile-link-color: #ffa963;
+	--desktop-link-color: #634528;
 	border: none;
 }
 
@@ -53,5 +55,3 @@ body {
 .section-padding {
 	padding: 3em 2em;
 }
-
-

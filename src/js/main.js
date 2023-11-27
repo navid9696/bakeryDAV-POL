@@ -348,12 +348,14 @@ const observer = new IntersectionObserver(entries => {
 		if (entry.isIntersecting) {
 			if (hamburgerStyle.getPropertyValue('display') === 'none') {
 				hrefToURL(correspondingLink)
-				correspondingLink.style.color = '#604a34'
-				id === 'home' ? svgNavIcon.setAttribute('fill', '#604a34') : svgNavIcon.setAttribute('fill', '#000000')
+				const desktopLinkColor = getComputedStyle(correspondingLink).getPropertyValue('--desktop-link-color')
+				correspondingLink.style.color = desktopLinkColor
+				id === 'home' ? svgNavIcon.setAttribute('fill', desktopLinkColor) : svgNavIcon.setAttribute('fill', '#000')
 			} else {
 				hrefToURL(correspondingLink)
-				correspondingLink.style.color = '#ffa963'
-				id === 'home' ? svgNavIcon.setAttribute('fill', '#ffa963') : svgNavIcon.setAttribute('fill', '#fff')
+				const mobileLinkColor = getComputedStyle(correspondingLink).getPropertyValue('--mobile-link-color')
+				correspondingLink.style.color = mobileLinkColor
+				id === 'home' ? svgNavIcon.setAttribute('fill', mobileLinkColor) : svgNavIcon.setAttribute('fill', '#fff')
 			}
 		} else {
 			correspondingLink.style.color = ''
