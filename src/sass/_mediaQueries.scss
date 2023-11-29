@@ -387,6 +387,7 @@
 			}
 
 			.contact-form {
+				position: relative;
 				width: 75%;
 				max-width: none;
 				padding: 2.5em;
@@ -396,7 +397,8 @@
 
 				&__input-btn {
 					padding: 0.7em 4em;
-					grid-row: 3/4;
+					
+					
 				}
 
 				&__box {

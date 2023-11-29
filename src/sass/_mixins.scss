@@ -26,18 +26,20 @@
 	background-color: $secondary-color;
 	color: #000;
 	font-weight: 700;
+	font-family: 'Young Serif', serif;
 	text-transform: uppercase;
-	border-radius: 12px;
-	border: 2px solid #000;
-	transition: background-color 0.6s, color 0.6s, border 0.6s;
+	border-radius: 16px;
+	border: 3px solid #000;
+	transition: background-color 0.6s, color 0.6s, border 0.6s, border-style 0.6s;
 	cursor: pointer;
-	
 
 	&:hover {
-		background-color: #1e1e1e;
 		color: $secondary-color;
-		border: 2px solid $secondary-color;
+		background-color: #1e1e1e;
+		border: 3px solid $secondary-color;
+		border-style: inset;
 	}
+	
 }
 
 @mixin attribution($color: #ffffffc0) {
@@ -72,5 +74,4 @@
 	border-right: 2px solid $border-color;
 	border-left: 2px solid $border-color;
 	border-radius: 4px;
-
 }
