@@ -31,15 +31,25 @@
 }
 
 @keyframes img-sizeup {
-	0% {
+	from {
 		position: fixed;
 		visibility: hidden;
 		opacity: 0;
 	}
 
-	100% {
+	to {
 		position: fixed;
 		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@keyframes fade{
+	from {
+		opacity: 0;
+	}
+
+	to {
 		opacity: 1;
 	}
 }

@@ -4,6 +4,7 @@
 	position: relative;
 	top: 0;
 	overflow: hidden;
+	animation: fade .8s ease-in both;
 
 	&::after {
 		content: '';
@@ -17,7 +18,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
-		opacity: 0.4;
+		opacity: 0.3;
 		z-index: -1;
 	}
 
@@ -68,7 +69,9 @@
 	&__btn {
 		@include main-btn;
 	}
-	
+	&__btn-link{
+		display: inline-block;
+	}
 
 	&__attribution {
 		@include attribution;

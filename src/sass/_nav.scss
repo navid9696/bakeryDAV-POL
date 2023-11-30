@@ -15,6 +15,7 @@
 	&__logo,
 	.hamburger,
 	&__list {
+		animation: fade 0.8s ease-in both;
 		position: fixed;
 	}
 
