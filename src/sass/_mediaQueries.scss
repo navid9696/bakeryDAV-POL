@@ -451,7 +451,7 @@
 
 	.header {
 		&::after {
-			background-image: url(../img/headerBGbig.jpg);
+			background-image: url(../img/headerBGbig.WebP);
 		}
 		&__title {
 			font-size: 6rem;
@@ -528,7 +528,7 @@
 
 	.contact {
 		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-			url(../../dist/img/various-buns-breakfast-big.jpg);
+			url(../../dist/img/various-buns-breakfast-big.WebP);
 		&__title {
 			font-size: 5rem;
 		}
