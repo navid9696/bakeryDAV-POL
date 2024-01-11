@@ -37,6 +37,7 @@ let correspondingFullscreenLi
 
 overlay.style.visibility = 'hidden'
 
+
 emailjs.init(`${EMAILJS_API_KEY}`)
 let emailValid = 0
 

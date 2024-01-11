@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#604a34">
     <meta name="author" content="Dawid Brzęczek">
-    <title>Piekarnia Brzęczek Gliwice|"DAV-POL" </title>
+    <title>Piekarnia Brzęczek Gliwice | "DAV-POL" </title>
     <meta name="description"
         content='Pyszne pieczywo i wyroby piekarnicze od Piekarni Brzęczek "DAV-POL" z Gliwic. Znajdź najlepsze pieczywo na śniadanie i inne smakołyki.'>
     <meta property="og:locale" content="pl_PL">
     <meta property="og:title" content='Piekarnia Brzęczek Gliwice|"DAV-POL"'>
-    <!-- <meta property="og:url" content="https://www..pl/"> -->
+    <meta property="og:url" content="https://www.piekarniabrzeczek.pl/">
     <meta property="og:type" content="article">
-    <!-- <link rel="canonical" href="https://www..pl/"> -->
+    <link rel="canonical" href="https://www.piekarniabrzeczek.pl/">
+    <link rel="icon" href="dist/img/logo.png">
     <link defer rel="preconnect" href="https://fonts.googleapis.com">
     <link defer rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Young+Serif&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/main.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVZ37J9T1T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SVZ37J9T1T');
+    </script>
 </head>
 
 <body>
@@ -533,14 +543,14 @@
                 <h3 class="contact__heading">Masz pytanie? Skontaktuj się z nami!</h3>
 
                 <div class="contact__email">
-                    <a class="email__link " href="mailto:kontakt.piekarniabrzeczek@gmail.com"><svg
+                    <a class="email__link " href="mailto:kontakt@piekarniabrzeczek.pl"><svg
                             class="contact-email__icon icons" width="64" height="64" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path class="svg-icon"
                                 d="M16 12a4 4 0 11-8 0 4 4 0 018 0zm0 0v1.5a2.5 2.5 0 002.5 2.5v0a2.5 2.5 0 002.5-2.5V12a9 9 0 10-9 9h4"
                                 stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <p class="contact__email-address">kontakt.piekarniabrzeczek@gmail.com</p>
+                        <p class="contact__email-address">kontakt@piekarniabrzeczek.pl</p>
                     </a>
                 </div>
 
@@ -590,7 +600,7 @@
     <div class="form section-padding">
         <div class="wrapper">
             <h2 data-aos="zoom-in" class="form__title">Formularz Kontaktowy</h2>
-            <h3 class="form__heading">Chcesz podzielić się z nami swoimi spostrzeżeniami?  Napisz do nas!
+            <h3 class="form__heading">Chcesz podzielić się z nami swoimi spostrzeżeniami? Napisz do nas!
             </h3>
 
 
@@ -619,9 +629,10 @@
                     <p class="contact-form__error-text">error</p>
                 </div>
 
-                <button class="contact-form__input-btn" type="submit">Wyślij</button>
+                <button class="contact-form__input-btn" type="submit" name="submit" value="Submit">Wyślij</button>
 
             </form>
+
             <div class="form__popup">
                 <p class="form__popup-text">Formularz został poprawnie wysłany!</p>
                 <button class="form__popup-close">Zamknij</button>
