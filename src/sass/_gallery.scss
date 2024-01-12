@@ -1,4 +1,6 @@
 .gallery {
+	min-height: 2211px;
+	max-height: fit-content;
 	background-color: #f1f1f1;
 	&__title {
 		@include title;
