@@ -31,7 +31,7 @@
 		border-radius: 6px;
 		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
 		transition: scale 0.3s;
-		cursor: pointer;
+		cursor: zoom-in;
 
 		&:hover {
 			scale: 1.05;
@@ -57,10 +57,12 @@
 		object-fit: cover;
 		visibility: hidden;
 		z-index: 9999;
+		cursor: zoom-out;
 
 		&::marker {
 			color: transparent;
 		}
+
 	}
 
 	&__photo-fullscreen {
@@ -72,10 +74,6 @@
 		border-radius: 6px;
 		box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.5);
 		z-index: 9999;
-
-		&:hover {
-			cursor: pointer;
-		}
 	}
 }
 
