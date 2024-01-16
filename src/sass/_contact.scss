@@ -40,7 +40,7 @@
 	}
 
 	&__heading {
-		@include heading(#fff, #fff);
+		@include heading(#f1f1f1, #f1f1f1);
 	}
 
 	&__email {
@@ -55,8 +55,8 @@
 			&:hover {
 				.svg-icon,
 				.contact__email-address {
-					stroke: #c0c0c0;
-					color: #c0c0c0;
+					stroke: #bababa;
+					color: #bababa;
 				}
 			}
 		}
@@ -77,8 +77,8 @@
 		&:hover {
 			.svg-icon,
 			.contact__phone-number {
-				fill: #c0c0c0;
-				color: #c0c0c0;
+				fill: #bababa;
+				color: #bababa;
 			}
 		}
 	}
@@ -102,7 +102,7 @@
 		margin-bottom: 2em;
 
 		&:hover .svg-icon {
-			fill: #c0c0c0;
+			fill: #bababa;
 		}
 	}
 
@@ -118,6 +118,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		color: #f1f1f1;
 		list-style: none;
 
 		.opening-hours__text {
@@ -171,7 +172,7 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			border: 3px solid #000;
+			border: 3px solid #131313;
 			border-radius: 8px;
 
 			&__box {
@@ -188,14 +189,15 @@
 				align-self: flex-start;
 				font-size: 2rem;
 				font-weight: bold;
-				color: #000;
+				color: $primary-color;
 			}
 
 			&__inputs {
 				width: 100%;
 				padding: 0.5em;
-				border: 2px solid #000;
+				border: 2px solid #131313;
 				border-radius: 6px;
+				color: #131313;
 				resize: vertical;
 
 				&::placeholder {
@@ -204,7 +206,7 @@
 				}
 
 				&:focus {
-					outline: 1px solid #000;
+					outline: 1px solid #131313;
 				}
 			}
 
@@ -241,7 +243,7 @@
 			width: 300px;
 			height: 150px;
 			background-color: #fff;
-			color: #000;
+			color: #131313;
 			border-radius: 8px;
 			border: 3px solid #000;
 			transition: top 0.8s;
