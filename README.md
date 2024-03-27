@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/navid9696/bakeryDAV-POL/tree/main/src/img/logo.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="src/img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">F.P.H.U. DAV-POL Bakery Website</h3>
@@ -35,11 +35,11 @@ Welcome to the GitHub repository for the F.P.H.U. DAV-POL Bakery website. This i
 
 
 
-* [![HTML][Next.js]][Next-url]
-* [![Kit][Next.js]][Next-url]
-* [![SCSS][React.js]][React-url]
-* [![JavaScript][Vue.js]][Vue-url]
-* [![Gulp][Angular.io]][Angular-url]
+* [![HTML][HTML5]]
+* [![Kit][Kit]][https://codekitapp.com/help/kit/]
+* [![SCSS][SCSS]][https://sass-lang.com]
+* [![JavaScript][JavaScript]]
+* [![Gulp][Gulp]][https://gulpjs.com]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -56,7 +56,7 @@ To get a local copy up and running follow these simple example steps.
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install
   ```
 
 ### Installation
@@ -66,7 +66,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/navid9696/bakeryDAV-POL.git
    ```
 2. Install NPM packages
    ```sh
