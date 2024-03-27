@@ -32,14 +32,7 @@ Welcome to the GitHub repository for the F.P.H.U. DAV-POL Bakery website. This i
 ### Built With
 
 
-* [![HTML][HTML]][HTML-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+[![Used](https://skillicons.dev/icons?i=js,html,scss,gulp,babel,vscode)](https://skillicons.dev)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
