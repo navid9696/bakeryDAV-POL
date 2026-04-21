@@ -1,87 +1,82 @@
+# 🥐 Bakery DAV-POL Website
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/navid9696/bakeryDAV-POL/tree/main/src/img/logo.png">
-    <img src="src/img/logo.png" alt="Logo" width="100" height="100">
-  </a>
+Simple single-page website created for a local bakery.
+This project focuses on building a responsive layout, basic interactivity, and integrating external services.
 
-  <h3 align="center">F.P.H.U. DAV-POL Bakery Website</h3>
+---
 
-  <p align="center">
-    <br />
-    <a href="https://www.piekarniabrzeczek.pl/">View site</a>
-  
-  </p>
-</div>
+## 🚀 Live Site
 
+👉 https://navid9696.github.io/bakeryDAV-POL/
 
+---
 
+## 🖼️ Overview
 
+Static business website that provides:
 
+* company information
+* contact details (phone, email)
+* Google Maps integration
+* link to Facebook page
+* contact form powered by EmailJS
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+---
 
-Welcome to the GitHub repository for the F.P.H.U. DAV-POL Bakery website. This is a single-page website providing information about the bakery and serving as a digital business card. Users can learn various details about the company, including its location on Google Maps, contact information such as phone and email, a link to the Facebook page, and a functional contact form powered by emailJS. The website also utilizes real cookies (not local storage) for certain functionalities.
+## ⚙️ Features
 
+* Responsive layout (mobile-friendly)
+* Contact form integration (EmailJS)
+* External services integration (Google Maps)
+* Basic cookie handling (browser cookies)
+* Smooth scrolling and UI interactions
 
+---
 
+## 🧱 Tech Stack
 
+* HTML
+* SCSS
+* JavaScript
+* Gulp (build tool)
+* Babel
 
-### Built With
+---
 
+## 🛠️ Installation
 
-[![Used](https://skillicons.dev/icons?i=js,html,scss,gulp,babel,vscode)](https://skillicons.dev)
+```bash
+git clone https://github.com/navid9696/bakeryDAV-POL.git
+cd bakeryDAV-POL
+npm install
+gulp
+```
 
+---
 
+## 📚 What I Learned
 
+* Building a complete website from scratch
+* Structuring HTML and styling with SCSS
+* Adding interactivity with JavaScript
+* Using build tools (Gulp, Babel)
+* Integrating third-party services (EmailJS, Google Maps)
 
+---
 
-<!-- GETTING STARTED -->
+## 📌 Project Context
 
-### Installation
+This was one of my first projects, focused on learning the fundamentals of web development and creating a real-world website for a local business.
 
+---
 
+## 📄 License
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/navid9696/bakeryDAV-POL.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Run Gulp
-   ```sh
-   gulp
-   ```
+MIT
 
+---
 
+## 👤 Author
 
-
-
-
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Dawid Brzęczek - dawidbrzeczek18@gmail.com
-
-Project Link: [https://github.com/navid9696/bakeryDAV-POL](https://github.com/navid9696/bakeryDAV-POL)
-
-
-
-
-
+Dawid Brzęczek
+[dawidbrzeczek18@gmail.com](mailto:dawidbrzeczek18@gmail.com)
